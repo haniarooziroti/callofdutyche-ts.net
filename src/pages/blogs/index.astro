@@ -13,6 +13,7 @@ import {
 } from '../../data/blogs/posts';
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../utils/schema';
 import { PRODUCT_BASE } from '../../config/site';
+import { pageTitle } from '../../config/seo';
 
 const posts = getCommercialBlogPosts();
 const breadcrumbs = [
@@ -23,7 +24,7 @@ const productHref = `${PRODUCT_BASE}modules/`;
 ---
 
 <BaseLayout
-  title={BLOG_INDEX_TITLE}
+  title={pageTitle('COD Cheat Guides & Blog Articles')}
   description={BLOG_INDEX_DESCRIPTION}
   jsonLd={[
     collectionPageSchema({
@@ -104,7 +105,7 @@ const productHref = `${PRODUCT_BASE}modules/`;
       </p>
 
       <section class="blogs-bottom-cta mt-16 rounded-2xl border border-border bg-muted/20 p-8 md:p-10">
-        <h2 class="text-2xl font-bold">Blogs: Call of Duty Cheats</h2>
+        <h2 class="text-2xl font-bold">Blogs: COD cheat guides</h2>
         <p class="mt-3 max-w-2xl text-muted-foreground">
           Use these guides to match ESP, aimbot, and setup steps to your queue—then open checkout when the module list fits
           Multiplayer, Operations, or extraction runs.

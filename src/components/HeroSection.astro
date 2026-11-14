@@ -10,11 +10,7 @@ import Icon from './icons/Icon.astro';
 import { Badge } from '@/components/starwind/badge';
 
 const h = t.hero;
-const heroTitle =
-  [h.titleLine1, h.titleLine2]
-    .map((line) => line?.trim())
-    .filter(Boolean)
-    .join(' ') || 'Call of Duty Cheat for PC';
+const heroTitle = h.titleLine1?.trim() || 'COD CHEAT';
 
 const heroMarqueePills = [
   ...heroStatusPills,
