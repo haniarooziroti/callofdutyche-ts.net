@@ -7,11 +7,14 @@ import BuyNowButton from './BuyNowButton.astro';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import HeroVideoPlayer from './HeroVideoPlayer.astro';
 import Icon from './icons/Icon.astro';
-import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
 
 const h = t.hero;
-const heroTitle = h.titleLine1?.trim() ? `${h.titleLine1} ${h.titleLine2}`.trim() : h.titleLine2;
+const heroTitle =
+  [h.titleLine1, h.titleLine2]
+    .map((line) => line?.trim())
+    .filter(Boolean)
+    .join(' ') || 'Call of Duty Cheat for PC';
 
 const heroMarqueePills = [
   ...heroStatusPills,
@@ -32,8 +35,11 @@ const heroMarqueePills = [
 
   <div class="relative mx-auto flex max-w-6xl flex-col justify-center px-5 py-10 md:py-14">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-16">
-      <div class="w-full space-y-6 text-left md:space-y-7 lg:pe-4">
-        <h1 id="hero-title" class="text-4xl font-bold leading-tight text-primary md:text-5xl">
+      <div class="hero-copy w-full space-y-6 text-left md:space-y-7 lg:pe-4">
+        {h.eyebrow && (
+          <p class="m-0 text-xs font-semibold uppercase tracking-wider text-primary">{h.eyebrow}</p>
+        )}
+        <h1 id="hero-title" class="hero-title text-4xl font-bold md:text-5xl">
           {heroTitle}
         </h1>
 
@@ -43,20 +49,16 @@ const heroMarqueePills = [
         <p class="max-w-xl text-sm leading-relaxed">
           <a class="text-primary underline-offset-4 hover:underline" href={PRODUCT_BASE}>Call of Duty cheat features</a>
           <span aria-hidden="true"> · </span>
-          <a class="text-primary underline-offset-4 hover:underline" href="/blogs/buy-cod-cheats/">how to buy Call of Duty cheats</a>
+          <a class="text-primary underline-offset-4 hover:underline" href="/blogs/buy-cod-cheats/">how to buy Call of Duty cheat</a>
         </p>
 
-        <div class="flex flex-nowrap items-center justify-start gap-3 max-sm:overflow-x-auto sm:gap-4">
-          <Button
-            as="a"
+        <div class="hero-cta-row">
+          <BuyNowButton
             href={PRODUCT_BASE}
-            variant="primary"
+            label={h.ctaPrimary}
             size="lg"
-            class="shrink-0 rounded-xl text-sm sm:text-base"
-          >
-            {h.ctaPrimary}
-            <Icon name="arrowRight" size={18} />
-          </Button>
+            class="shrink-0"
+          />
           <BuyNowButton
             href={PRIMARY_CHECKOUT_PATH}
             rel={AFFILIATE_REL}

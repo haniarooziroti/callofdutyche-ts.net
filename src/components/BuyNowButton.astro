@@ -10,6 +10,8 @@ interface Props {
   'data-plan'?: string;
   'data-checkout-buy'?: boolean;
   size?: 'md' | 'lg';
+  /** Reserved for future use — all CTAs share one style by default */
+  tone?: 'checkout' | 'primary';
 }
 
 const {
@@ -21,7 +23,10 @@ const {
   'data-plan': dataPlan,
   'data-checkout-buy': dataCheckoutBuy,
   size = 'md',
+  tone = 'checkout',
 } = Astro.props;
+
+const iconSize = size === 'lg' ? 20 : 18;
 ---
 
 <a
@@ -34,6 +39,6 @@ const {
 >
   <span class="buy-now-cta__label">{label}</span>
   <span class="buy-now-cta__rail" aria-hidden="true">
-    <Icon name="arrowRight" size={size === 'lg' ? 20 : 18} />
+    <Icon name="arrowRight" size={iconSize} />
   </span>
 </a>
