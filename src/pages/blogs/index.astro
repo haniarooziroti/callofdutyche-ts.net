@@ -1,0 +1,184 @@
+---
+import '../../styles/blogs.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BlogsCard from '../../components/blogs/BlogsCard.astro';
+import Icon from '../../components/icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import {
+  BLOG_INDEX_DESCRIPTION,
+  BLOG_INDEX_TITLE,
+  COMMERCIAL_BLOG_COUNT,
+  getCommercialBlogPosts,
+} from '../../data/blogs/posts';
+import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../utils/schema';
+import { PRODUCT_BASE } from '../../config/site';
+
+const posts = getCommercialBlogPosts();
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Blogs', path: '/blogs/' },
+];
+const productHref = `${PRODUCT_BASE}call-of-duty-store/`;
+---
+
+<BaseLayout
+  title={BLOG_INDEX_TITLE}
+  description={BLOG_INDEX_DESCRIPTION}
+  jsonLd={[
+    collectionPageSchema({
+      name: 'Call of Duty Blogs: Aimbot, ESP & Setup Guides',
+      description: BLOG_INDEX_DESCRIPTION,
+      url: '/blogs/',
+    }),
+    breadcrumbSchema(breadcrumbs),
+    itemListSchema(
+      posts.map((p) => ({
+        name: p.title,
+        url: `/blogs/${p.slug}/`,
+      })),
+    ),
+  ]}
+>
+  <section class="blogs-page py-8 md:py-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+      <header class="mt-6 max-w-3xl space-y-3">
+        <p class="text-xs font-semibold uppercase tracking-wider text-primary">Blogs</p>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">Blogs and Guides</h1>
+        <p class="text-lg text-muted-foreground">
+          Practical guides for Call of Duty aimbot, player ESP, wallhack, no recoil, setup and patch-day status on Windows.
+          Read the guides, then compare modules on the <a href={PRODUCT_BASE} class="text-primary underline-offset-4 hover:underline">product page</a>.
+        </p>
+      </header>
+
+      <div class="blogs-toolbar mt-8 flex flex-col gap-4 rounded-2xl border border-border bg-card/60 p-4 md:flex-row md:items-end md:justify-between">
+        <label class="flex min-w-[220px] flex-1 flex-col gap-1.5 text-sm">
+          <span class="font-medium text-foreground">Search Call of Duty blog</span>
+          <span class="relative">
+            <Icon name="search" size={16} class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              class="w-full rounded-xl border border-border bg-background py-2.5 pl-9 pr-3 text-sm"
+              placeholder="Search guides…"
+              data-blogs-search
+              aria-controls="blogs-grid"
+            />
+          </span>
+        </label>
+        <label class="flex flex-col gap-1.5 text-sm">
+          <span class="font-medium text-foreground">Sort by</span>
+          <select class="rounded-xl border border-border bg-background px-3 py-2.5 text-sm" data-blogs-sort>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
+        <p class="text-sm font-medium text-muted-foreground" data-blogs-count aria-live="polite">
+          {COMMERCIAL_BLOG_COUNT} guides
+        </p>
+      </div>
+
+      <div class="blogs-filters mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+        {['All blogs', 'Features', 'Guides', 'Setup', 'Updates'].map((chip, i) => (
+          <button
+            type="button"
+            class:list={[
+              'rounded-full border px-3 py-1.5 text-xs font-semibold transition',
+              i === 0 ? 'is-active border-primary bg-primary/15 text-primary' : 'border-border text-muted-foreground',
+            ]}
+            data-blogs-filter={chip === 'All blogs' ? 'all' : chip}
+            aria-pressed={i === 0 ? 'true' : 'false'}
+          >
+            {chip}
+          </button>
+        ))}
+      </div>
+
+      <div id="blogs-grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-blogs-grid>
+        {posts.map((post, i) => (
+          <BlogsCard post={post} index={i} />
+        ))}
+      </div>
+      <p class="mt-8 hidden text-center text-muted-foreground" data-blogs-empty>
+        No guides match your search.
+      </p>
+
+      <section class="blogs-bottom-cta mt-16 rounded-2xl border border-border bg-muted/20 p-8 md:p-10">
+        <h2 class="text-2xl font-bold">Blogs: Call of Duty Cheats</h2>
+        <p class="mt-3 max-w-2xl text-muted-foreground">
+          Use these guides to match ESP, aimbot, and setup steps to your queue—then open checkout when the module list fits
+          Multiplayer, Operations, or extraction runs.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <Button as="a" href={PRODUCT_BASE} variant="primary">
+            View Call of Duty products
+            <Icon name="arrowRight" size={16} />
+          </Button>
+          <Button as="a" href={productHref} variant="outline">
+            See pricing
+            <Icon name="arrowRight" size={16} />
+          </Button>
+          <Button as="a" href="/forum/" variant="outline">
+            Open forum
+            <Icon name="arrowRight" size={16} />
+          </Button>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <script>
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-blogs-card]')];
+    const grid = document.querySelector('[data-blogs-grid]');
+    const search = document.querySelector<HTMLInputElement>('[data-blogs-search]');
+    const sort = document.querySelector<HTMLSelectElement>('[data-blogs-sort]');
+    const countEl = document.querySelector('[data-blogs-count]');
+    const empty = document.querySelector<HTMLElement>('[data-blogs-empty]');
+    const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-blogs-filter]')];
+    let activeFilter = 'all';
+
+    function updateBlogs() {
+      const q = search?.value.trim().toLowerCase() ?? '';
+      const sortVal = sort?.value ?? 'newest';
+      const ordered = [...cards].sort((a, b) => {
+        const da = a.dataset.published ?? '';
+        const db = b.dataset.published ?? '';
+        return sortVal === 'oldest' ? da.localeCompare(db) : db.localeCompare(da);
+      });
+      const visible = ordered.filter((card) => {
+        const cat = card.dataset.category ?? '';
+        const matchesCat = activeFilter === 'all' || cat === activeFilter;
+        const text = `${card.dataset.title} ${card.dataset.excerpt} ${cat}`.toLowerCase();
+        const matchesSearch = !q || text.includes(q);
+        return matchesCat && matchesSearch;
+      });
+      ordered.forEach((card) => {
+        card.hidden = !visible.includes(card);
+        grid?.append(card);
+      });
+      if (countEl) countEl.textContent = `${visible.length} guide${visible.length === 1 ? '' : 's'}`;
+      if (empty) {
+        empty.classList.toggle('hidden', visible.length > 0);
+        empty.classList.toggle('block', visible.length === 0);
+      }
+    }
+
+    filters.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.blogsFilter ?? 'all';
+        filters.forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.classList.toggle('border-primary', on);
+          b.classList.toggle('bg-primary/15', on);
+          b.classList.toggle('text-primary', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+        updateBlogs();
+      }),
+    );
+    search?.addEventListener('input', updateBlogs);
+    sort?.addEventListener('change', updateBlogs);
+    updateBlogs();
+  </script>
+</BaseLayout>

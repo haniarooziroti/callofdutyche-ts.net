@@ -1,0 +1,91 @@
+---
+import type { ProductPage } from '../../data/products';
+import { checkoutForSlug } from '../../config/checkout';
+import { AFFILIATE_REL } from '../../config/affiliate';
+import AffiliateDisclosure from '../AffiliateDisclosure.astro';
+import { productPath } from '../../utils/path';
+import Icon from '../icons/Icon.astro';
+import ProductIconWell from './ProductIconWell.astro';
+import { Button } from '@/components/starwind/button';
+
+interface Props {
+  product: ProductPage;
+}
+
+const { product } = Astro.props;
+const checkoutHref = product.buyUrl || checkoutForSlug(product.slug);
+const featureItems = product.fullFeatures.slice(0, 6);
+const showDmaSpooferRow = product.slug === 'call-of-duty-store';
+const spooferPage = productPath('hwid-spoofer');
+const cloudDmaPage = productPath('cloud-dma');
+const cloudCheckout = checkoutForSlug('cloud-dma');
+---
+
+<aside
+  class="product-checkout text-left lg:sticky lg:top-24"
+  aria-labelledby={`checkout-${product.slug}`}
+  data-product-checkout
+>
+  <div class="overflow-hidden rounded-2xl border border-primary/35 bg-card shadow-md ring-1 ring-primary/15">
+    <div class="card-title-band flex items-center justify-start gap-3 px-5 py-4 text-left">
+      <ProductIconWell name="acqPackage" iconSize={20} class="bg-primary/15" />
+      <div class="min-w-0 text-left">
+        <p class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Product features</p>
+        <h2 id={`checkout-${product.slug}`} class="text-base font-semibold leading-snug">
+          Explore what's included
+        </h2>
+      </div>
+    </div>
+
+    <div class="space-y-5 px-5 pb-5 pt-5">
+      <ul class="space-y-2.5 text-sm text-foreground">
+        {
+          featureItems.map((item) => (
+            <li class="flex gap-2 leading-snug">
+              <Icon name="check" size={16} class="mt-0.5 shrink-0 text-primary" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="text-xs text-muted-foreground">
+        Available plans and pricing are shown at checkout.
+      </p>
+
+      <Button
+        as="a"
+        href={checkoutHref}
+        rel={AFFILIATE_REL}
+        variant="primary"
+        size="lg"
+        class="w-full max-w-full rounded-xl text-center whitespace-normal"
+        data-checkout-buy
+      >
+        Proceed to Checkout
+        <Icon name="arrowRight" size={17} />
+      </Button>
+      <AffiliateDisclosure />
+
+      {
+        showDmaSpooferRow && (
+          <div class="space-y-3 border-t border-border pt-4">
+            <p class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Add-ons</p>
+            <Button as="a" href={cloudCheckout} rel={AFFILIATE_REL} variant="outline" size="sm" class="w-full justify-between rounded-xl">
+              <span class="truncate">Add Cloud DMA</span>
+              <Icon name="compareCloudBackup" size={17} />
+            </Button>
+            <Button as="a" href={cloudDmaPage} variant="ghost" size="sm" class="w-full justify-between rounded-xl text-muted-foreground">
+              <span class="truncate">Cloud DMA product page</span>
+              <Icon name="arrowRight" size={17} />
+            </Button>
+            <Button as="a" href={spooferPage} variant="outline" size="sm" class="w-full justify-between rounded-xl">
+              <span class="truncate">HWID Spoofer (product page)</span>
+              <Icon name="arrowRight" size={17} />
+            </Button>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</aside>

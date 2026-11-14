@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Call of Duty night raid extraction lane">
+  <rect width="1200" height="675" fill="#0D0A14"/>
+  <polygon points="0,500 400,320 800,380 1200,280 1200,675 0,675" fill="#0F0C19"/>
+  <rect x="880" y="200" width="220" height="120" fill="none" stroke="#facc15" stroke-width="2" opacity=".7"/>
+  <text x="890" y="195" fill="#facc15" font-size="14">EXFIL</text>
+</svg>

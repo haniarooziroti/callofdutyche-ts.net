@@ -1,0 +1,73 @@
+---
+import Icon from './icons/Icon.astro';
+import type { IconName } from './icons/types';
+import { productPath } from '../utils/path';
+import { Badge } from '@/components/starwind/badge';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/starwind/table';
+
+interface CompareRow {
+  feature: string;
+  icon: IconName;
+  included: boolean;
+}
+
+interface Props {
+  rows: CompareRow[];
+}
+
+const { rows } = Astro.props;
+const modulesPage = productPath('call-of-duty-store');
+---
+
+<section class="space-y-4" aria-labelledby="compare-heading">
+  <header class="section-header">
+    <p class="section-header__eyebrow">Compare</p>
+    <h2 id="compare-heading" class="section-header__title">Call of Duty module feature checklist</h2>
+    <p class="section-header__subtitle">What the linked store bundles in the full Call of Duty cheat module stack.</p>
+  </header>
+
+  <div class="rounded-lg border border-border" tabindex="0" aria-label="Compare modules">
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead class="min-w-[12rem]">Feature</TableHead>
+          <TableHead class="min-w-[8rem] text-center">
+            <div class="flex flex-col items-center gap-2 py-2">
+              <Badge>In stock</Badge>
+              <a href={modulesPage} class="inline-flex flex-col items-center gap-1 text-sm font-semibold hover:text-primary">
+                <Icon name="crosshair" size={22} aria-hidden="true" />
+                Full module stack
+              </a>
+            </div>
+          </TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {rows.map((row) => (
+          <TableRow>
+            <TableCell>
+              <span class="flex items-center gap-2">
+                <Icon name={row.icon} size={16} class="shrink-0 text-muted-foreground" aria-hidden="true" />
+                {row.feature}
+              </span>
+            </TableCell>
+            <TableCell class="text-center">
+              {row.included ? (
+                <Icon name="check" size={18} class="icon-app--primary mx-auto" aria-label="Included" />
+              ) : (
+                <span class="text-muted-foreground" aria-hidden="true">—</span>
+              )}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </div>
+</section>

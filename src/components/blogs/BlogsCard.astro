@@ -1,0 +1,61 @@
+---
+import type { CommercialBlogPost } from '../../data/blogs/types';
+import ResponsiveImage from '../ResponsiveImage.astro';
+import Icon from '../icons/Icon.astro';
+import { CARD_IMAGE_WIDTHS } from '../../utils/responsiveImage';
+
+interface Props {
+  post: CommercialBlogPost;
+  index?: number;
+}
+
+const { post, index = 0 } = Astro.props;
+const href = `/blogs/${post.slug}/`;
+const publishedLabel = new Date(post.published).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<article
+  class="blogs-card group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-card/70 shadow-sm transition hover:border-primary/40"
+  data-blogs-card
+  data-category={post.category}
+  data-published={post.published}
+  data-title={post.title.toLowerCase()}
+  data-excerpt={post.excerpt.toLowerCase()}
+  data-read-min={parseInt(post.readTime, 10) || 5}
+>
+  <a href={href} class="block overflow-hidden" tabindex="-1" aria-hidden="true">
+    <ResponsiveImage
+      src={post.image}
+      alt={post.imageAlt}
+      width={post.heroWidth}
+      height={post.heroHeight}
+      widths={CARD_IMAGE_WIDTHS}
+      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+      loading={index < 3 ? 'eager' : 'lazy'}
+      fetchpriority={index < 3 ? 'high' : undefined}
+      class="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+    />
+  </a>
+  <div class="flex flex-1 flex-col gap-2 p-5">
+    <div class="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+      <span class="rounded-full bg-primary/15 px-2 py-0.5 font-semibold uppercase tracking-wide text-primary">
+        {post.category}
+      </span>
+      <time datetime={post.published}>{publishedLabel}</time>
+      <span aria-hidden="true">·</span>
+      <span>{post.readTime}</span>
+    </div>
+    <h2 class="text-lg font-semibold leading-snug">
+      <a href={href} class="text-foreground hover:text-primary">{post.title}</a>
+    </h2>
+    <p class="line-clamp-2 text-sm text-muted-foreground">{post.excerpt}</p>
+    <a href={href} class="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
+      Read guide
+      <Icon name="arrowRight" size={16} />
+    </a>
+  </div>
+</article>

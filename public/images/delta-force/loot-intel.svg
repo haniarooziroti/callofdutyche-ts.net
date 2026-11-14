@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Call of Duty loot ESP with price filters">
+  <rect width="960" height="540" fill="#0F0C18"/>
+  <text x="200" y="160" fill="#fcd34d" font-size="18" font-family="monospace">Armor Lv.3 � $48,200</text>
+  <text x="420" y="280" fill="#a78bfa" font-size="16" font-family="monospace">Chest rig � rare</text>
+  <text x="620" y="360" fill="#4ade80" font-size="15" font-family="monospace">Computer � extract data</text>
+  <rect x="180" y="130" width="8" height="40" fill="#fcd34d"/>
+  <rect x="400" y="250" width="8" height="36" fill="#a78bfa"/>
+</svg>

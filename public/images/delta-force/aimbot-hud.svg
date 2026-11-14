@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Call of Duty aimbot FOV circle and smoothing HUD">
+  <rect width="960" height="540" fill="#0F0C19"/>
+  <circle cx="480" cy="270" r="140" fill="none" stroke="#818cf8" stroke-width="2" opacity=".75"/>
+  <circle cx="480" cy="270" r="4" fill="#e2e8f0"/>
+  <line x1="480" y1="130" x2="480" y2="410" stroke="#334155" stroke-width="1"/>
+  <line x1="340" y1="270" x2="620" y2="270" stroke="#334155" stroke-width="1"/>
+  <path d="M520 248 L612 210" stroke="#fbbf24" stroke-width="2" opacity=".9"/>
+  <text x="50" y="500" fill="#94a3b8" font-size="16" font-family="system-ui">FOV � smooth � stickiness</text>
+</svg>

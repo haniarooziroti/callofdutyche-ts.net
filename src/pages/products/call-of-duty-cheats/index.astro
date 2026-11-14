@@ -1,0 +1,89 @@
+---
+import '../../../styles/product-cheat-page.css';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { productHub } from '../../../data/products';
+import { getCatalogCards } from '../../../data/catalog';
+import { resolvePageSeo } from '../../../config/seo';
+import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../../utils/schema';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CatalogCard from '../../../components/CatalogCard.astro';
+import { productPath } from '../../../utils/path';
+import { productPages } from '../../../data/products';
+import { PRIMARY_CHECKOUT_PATH } from '../../../config/checkout';
+import { AFFILIATE_REL } from '../../../config/affiliate';
+import { Button } from '@/components/starwind/button';
+
+const seo = resolvePageSeo('/products/call-of-duty-cheats/');
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: productHub.path },
+];
+const catalogCards = getCatalogCards();
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={[
+    collectionPageSchema({
+      name: productHub.title,
+      description: productHub.description,
+      url: productHub.path,
+    }),
+    breadcrumbSchema(breadcrumbs),
+    itemListSchema(
+      productPages.map((product) => ({
+        name: product.title,
+        url: productPath(product.slug),
+      })),
+    ),
+  ]}
+>
+  <section class="py-8 md:py-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+
+      <div class="mt-6 max-w-3xl space-y-3">
+        <h1 class="text-3xl font-bold md:text-4xl">Call of Duty cheats for PC</h1>
+        <p class="text-lg text-muted-foreground">
+          Compare module scope, compatibility notes, and utility add-ons. Pricing and plan length are shown at checkout.
+        </p>
+        <p class="text-sm text-muted-foreground">
+          <a href="/" class="text-primary underline-offset-4 hover:underline">Call of Duty cheats feature overview</a>
+          <span aria-hidden="true"> · </span>
+          <a href="/blogs/buy-cod-cheats/" class="text-primary underline-offset-4 hover:underline">checkout steps before you pay</a>
+          <span aria-hidden="true"> · </span>
+          <a href="/products/call-of-duty-cheats/utilities/" class="text-primary underline-offset-4 hover:underline">utility catalog for HWID and DMA</a>
+        </p>
+      </div>
+
+      <div class="mt-10 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        {catalogCards.map((product) => {
+          const cardTitle = product.cardTitle ?? product.title;
+          return (
+            <CatalogCard
+              label={product.label}
+              title={cardTitle}
+              href={product.href}
+              buyUrl={product.buyUrl}
+              features={product.features}
+              more={product.more}
+              icon={product.icon}
+              badge={product.badge}
+              variant={product.variant}
+              extraBadges={product.extraBadges}
+              buyLabel="Proceed to Checkout"
+            />
+          );
+        })}
+      </div>
+
+      <div class="mt-10">
+        <Button as="a" href={PRIMARY_CHECKOUT_PATH} rel={AFFILIATE_REL} variant="primary" size="lg" class="rounded-xl">
+          Proceed to Checkout
+        </Button>
+        <p class="mt-2 text-xs text-muted-foreground">Available plans and pricing are shown at checkout.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

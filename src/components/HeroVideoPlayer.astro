@@ -1,0 +1,112 @@
+---
+import { HERO_VIDEO, SEO_MEDIA } from '../config/media';
+import Icon from './icons/Icon.astro';
+
+const poster = HERO_VIDEO.poster || SEO_MEDIA.heroPoster;
+const videoSrc = HERO_VIDEO.src;
+---
+
+<div
+  class="hero-video relative w-full overflow-hidden rounded-xl border border-border bg-card shadow-sm"
+  data-hero-video
+>
+  <video
+    class="hero-video__el aspect-video w-full bg-muted/40 object-cover"
+    data-hero-video-el
+    poster={poster}
+    preload="metadata"
+    playsinline
+    controls={false}
+    aria-label="Call of Duty gameplay preview — press play to start"
+  >
+    {videoSrc ? <source src={videoSrc} type="video/mp4" /> : null}
+  </video>
+
+  <div
+    class="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-center gap-2 border-t border-white/10 bg-black/55 px-3 py-2.5 backdrop-blur-sm"
+    role="group"
+    aria-label="Video controls"
+  >
+    <button
+      type="button"
+      class="inline-flex size-10 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      data-hero-video-back
+      aria-label="Rewind 10 seconds"
+    >
+      <Icon name="skipBack" size={20} />
+    </button>
+    <button
+      type="button"
+      class="inline-flex h-10 min-w-[7.5rem] items-center justify-center gap-2 rounded-lg border border-primary/40 bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      data-hero-video-play
+      aria-label="Play video"
+      data-state="paused"
+    >
+      <span class="hero-video__play-glyph inline-flex size-[18px] items-center justify-center" data-hero-video-play-glyph aria-hidden="true">▶</span>
+      <span data-hero-video-play-label>Play</span>
+    </button>
+    <button
+      type="button"
+      class="inline-flex size-10 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      data-hero-video-forward
+      aria-label="Forward 10 seconds"
+    >
+      <Icon name="skipForward" size={20} />
+    </button>
+  </div>
+</div>
+
+<script>
+  const SEEK_SEC = 10;
+
+  function bindHeroVideo(root: HTMLElement) {
+    if (root.dataset.heroVideoBound === 'true') return;
+    root.dataset.heroVideoBound = 'true';
+
+    const video = root.querySelector<HTMLVideoElement>('[data-hero-video-el]');
+    const playBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-play]');
+    const playLabel = root.querySelector<HTMLElement>('[data-hero-video-play-label]');
+    const backBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-back]');
+    const forwardBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-forward]');
+    if (!video || !playBtn) return;
+
+    const glyph = root.querySelector<HTMLElement>('[data-hero-video-play-glyph]');
+
+    const syncPlayUi = () => {
+      const playing = !video.paused && !video.ended;
+      playBtn.dataset.state = playing ? 'playing' : 'paused';
+      playBtn.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+      if (playLabel) playLabel.textContent = playing ? 'Pause' : 'Play';
+      if (glyph) glyph.textContent = playing ? '❚❚' : '▶';
+    };
+
+    playBtn.addEventListener('click', () => {
+      if (video.paused || video.ended) {
+        void video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    backBtn?.addEventListener('click', () => {
+      video.currentTime = Math.max(0, video.currentTime - SEEK_SEC);
+    });
+
+    forwardBtn?.addEventListener('click', () => {
+      const end = Number.isFinite(video.duration) ? video.duration : video.currentTime + SEEK_SEC;
+      video.currentTime = Math.min(end, video.currentTime + SEEK_SEC);
+    });
+
+    video.addEventListener('play', syncPlayUi);
+    video.addEventListener('pause', syncPlayUi);
+    video.addEventListener('ended', syncPlayUi);
+    syncPlayUi();
+  }
+
+  function initHeroVideos() {
+    document.querySelectorAll<HTMLElement>('[data-hero-video]').forEach(bindHeroVideo);
+  }
+
+  initHeroVideos();
+  document.addEventListener('astro:after-swap', initHeroVideos);
+</script>

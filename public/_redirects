@@ -1,0 +1,14 @@
+/go/call-of-duty https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty 302
+/go/call-of-duty/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty 302
+/go/store https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty 302
+/go/store/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty 302
+
+/cheats /products/call-of-duty-cheats/ 301
+/cheats/ /products/call-of-duty-cheats/ 301
+/cheats/compare /forum/ 301
+/cheats/compare/ /forum/ 301
+/products/cs2-cheats/* /products/call-of-duty-cheats/:splat 301
+/products/dota-2-cheats /products/call-of-duty-cheats/ 301
+/products/dota-2-cheats/ /products/call-of-duty-cheats/ 301
+/contact /support/ 301
+/contact/ /support/ 301

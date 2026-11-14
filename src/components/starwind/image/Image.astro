@@ -1,0 +1,29 @@
+---
+import { Image as AstroImage } from "astro:assets";
+
+import { image } from "./variants";
+
+type Props = Partial<import("astro/types").ComponentProps<typeof AstroImage>> & {
+  inferSize?: boolean;
+  alt: string;
+};
+
+const { class: className, src, alt, inferSize = true, ...rest } = Astro.props;
+
+if (typeof alt !== "string") {
+  throw new Error("Image: prop `alt` is required (string).");
+}
+---
+
+{
+  src && (
+    <AstroImage
+      class={image({ class: className })}
+      src={src}
+      alt={alt}
+      inferSize={inferSize}
+      {...(rest as any)}
+      data-slot="image"
+    />
+  )
+}

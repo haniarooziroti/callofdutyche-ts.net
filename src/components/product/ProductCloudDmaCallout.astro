@@ -1,0 +1,32 @@
+---
+import { productPath } from '../../utils/path';
+import { checkoutForSlug } from '../../config/checkout';
+import { affiliateRel } from '../../config/affiliate';
+import Icon from '../icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+
+const cloudDmaPage = productPath('cloud-dma');
+const cloudCheckout = checkoutForSlug('cloud-dma');
+---
+
+<aside
+  class="mx-auto max-w-6xl px-5 pb-4"
+  aria-labelledby="cloud-dma-callout-title"
+>
+  <div class="rounded-2xl border border-primary/30 bg-primary/5 p-6 md:p-8">
+    <h2 id="cloud-dma-callout-title" class="text-lg font-semibold">Cloud DMA</h2>
+    <p class="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+      Required for full functionality on supported builds. All combat and intel features on those builds run through Cloud DMA—read cabling and second-PC notes before you add hardware.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <Button as="a" href={cloudCheckout} rel={affiliateRel(cloudCheckout)} variant="primary" size="sm" class="rounded-xl">
+        Add Cloud DMA
+        <Icon name="arrowRight" size={16} />
+      </Button>
+      <Button as="a" href={cloudDmaPage} variant="outline" size="sm" class="rounded-xl">
+        Cloud DMA product page
+        <Icon name="arrowRight" size={16} />
+      </Button>
+    </div>
+  </div>
+</aside>

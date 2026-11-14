@@ -1,0 +1,100 @@
+/**
+ * Central titles/descriptions for high-traffic routes.
+ * Titles: 50–60 chars; descriptions: 120–155 chars (see scripts/seo-check.mjs).
+ */
+
+export interface PageSeoEntry {
+  title: string;
+  description: string;
+}
+
+const hub = '/products/call-of-duty-cheats/';
+
+export const PAGE_SEO: Record<string, PageSeoEntry> = {
+  '/': {
+    title: 'Call of Duty Cheats for PC | ESP & Aimbot Features',
+    description:
+      'Explore Call of Duty cheats for PC, compare available ESP and aimbot features, review game compatibility, and find product details before checkout.',
+  },
+  [hub]: {
+    title: 'Call of Duty Cheats Catalog | Features & Compatibility',
+    description:
+      'Browse Call of Duty cheat modules for PC: ESP, aimbot, utilities, and compatibility notes. Compare features here, then open checkout for plans.',
+  },
+  [`${hub}call-of-duty-store/`]: {
+    title: 'Call of Duty Cheat Modules for ESP, Aimbot and Loot',
+    description:
+      'Call of Duty cheat with radar hack, no recoil assists, item esp, and external cheat loader path where listed. Read scope here, then open checkout for price.',
+  },
+  [`${hub}cloud-dma/`]: {
+    title: 'Call of Duty Cloud DMA Hardware | Cabling and Notes',
+    description:
+      'Cloud DMA basics for Call of Duty on PC: second machine, cabling, and firmware expectations. Read risks on this page before you add hardware at checkout.',
+  },
+  [`${hub}utilities/`]: {
+    title: 'Compare Call of Duty Utilities | HWID and Cloud DMA',
+    description:
+      'Compare Call of Duty PC utilities: the HWID spoofer and Cloud DMA sit beside the cheat catalog. Match the tool to the problem, then open its page.',
+  },
+  [`${hub}hwid-spoofer/`]: {
+    title: 'Call of Duty HWID Spoofer | Fresh Windows Identifiers',
+    description:
+      'HWID spoofer workflow for Call of Duty on Windows: disk and MAC rotation, restore checkpoints, and verification before you relaunch the game.',
+  },
+  [`${hub}ugc/`]: {
+    title: 'Account Appeals for Call of Duty | Evidence Workspace',
+    description:
+      'UGC appeal workspace for Call of Duty players: organize ban notices, receipts, and timelines. Informational help—not a guaranteed unban.',
+  },
+  '/blogs/': {
+    title: 'Call of Duty Blogs and Guides | COD Cheats',
+    description:
+      'Call of Duty blogs and guides on ESP, aimbot, compatibility, PC settings, and checkout. Search guides before you buy.',
+  },
+  '/reviews/': {
+    title: 'Call of Duty Cheat Reviews from Buyers | Read First',
+    description:
+      'Call of Duty cheat reviews from buyers: ESP, aimbot, loader setup, and support outcomes. Read ratings before you open checkout.',
+  },
+  '/forum/': {
+    title: 'Call of Duty cheats forum: setup and aimbot threads',
+    description:
+      'Call of Duty cheats forum threads on loaders, ESP clutter, aimbot FOV, patch nights, and loot intel from PC players—read discussions before checkout.',
+  },
+  '/faq/': {
+    title: 'Call of Duty Cheat FAQ | Loader, Risk, and Checkout',
+    description:
+      'FAQ on Call of Duty cheat modules, loader status, HWID tools, Cloud DMA, and checkout. Scan answers first, then open support or the product hub.',
+  },
+  '/terms/': {
+    title: 'Terms of Use for cod-cheats.net | Liability Limits',
+    description:
+      'Terms for browsing cod-cheats.net, using guides and forum threads, and following outbound checkout links. Refunds follow the seller policy.',
+  },
+  '/privacy/': {
+    title: 'Privacy Policy | Cookies and Analytics on This Site',
+    description:
+      'How cookies and analytics are used while you browse Call of Duty cheat pages, and how to contact us about data questions.',
+  },
+  '/support/': {
+    title: 'Call of Duty Cheats Support | Loader, Keys, Checkout',
+    description:
+      'Support channels for loader issues, checkout questions, and module help on cod-cheats.net. Include your order email when contacting us.',
+  },
+  '/about/': {
+    title: 'About This Call of Duty Cheat Catalog and Buyer Guides',
+    description:
+      'What cod-cheats.net covers: Call of Duty ESP, aimbot, and utility explainers plus community forum threads—not the game publisher.',
+  },
+};
+
+export function normalizeSeoPath(pathname: string): string {
+  let path = pathname || '/';
+  if (!path.startsWith('/')) path = `/${path}`;
+  if (path !== '/' && !path.endsWith('/')) path = `${path}/`;
+  return path;
+}
+
+export function getPageSeoEntry(pathname: string): PageSeoEntry | undefined {
+  return PAGE_SEO[normalizeSeoPath(pathname)];
+}

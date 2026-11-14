@@ -1,0 +1,63 @@
+---
+import { t } from '../i18n';
+import { forumPosts } from '../data/forum';
+import WorkflowSection from './WorkflowSection.astro';
+import SectionHeader from './SectionHeader.astro';
+import Icon from './icons/Icon.astro';
+import { ROUTES } from '../utils/path';
+import SiteFaqSection from './SiteFaqSection.astro';
+import { getLandingFaqs } from '../data/faq';
+import { Button } from '@/components/starwind/button';
+
+const homeFaqs = getLandingFaqs();
+const featuredThreads = forumPosts.slice(0, 3);
+const forumCopy = t.forum ?? {
+  eyebrow: 'Community',
+  title: 'Call of Duty cheat forums',
+  subtitle: 'Setup, aimbot tuning, ESP layouts, and patch-night threads from players on PC.',
+  viewAll: 'Browse all forums',
+};
+---
+
+<WorkflowSection />
+
+<section id="forums" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="forums-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <SectionHeader
+      eyebrow={forumCopy.eyebrow}
+      title={forumCopy.title}
+      desc={forumCopy.subtitle}
+      titleId="forums-title"
+    />
+
+    <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      {featuredThreads.map((post) => (
+        <li>
+          <article class="group flex h-full flex-col rounded-2xl border border-border/80 bg-card/60 p-5 shadow-sm transition hover:border-primary/40 hover:bg-card">
+            <span class="text-xs font-medium uppercase tracking-wide text-primary">{post.category}</span>
+            <a
+              href={`/forum/${post.slug}/`}
+              class="mt-2 text-base font-semibold leading-snug text-foreground group-hover:text-primary"
+            >
+              {post.title}
+            </a>
+            <p class="mt-2 line-clamp-3 text-sm text-muted-foreground">{post.excerpt}</p>
+            <a href={`/forum/${post.slug}/`} class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+              Read discussion ({post.commentsCount} replies)
+              <Icon name="arrowRight" size={16} />
+            </a>
+          </article>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-10 flex justify-start lg:justify-center">
+      <Button as="a" href={ROUTES.forum} variant="outline">
+        {forumCopy.viewAll}
+        <Icon name="arrowRight" size={17} />
+      </Button>
+    </div>
+  </div>
+</section>
+
+<SiteFaqSection id="faq" titleId="faq-title" items={homeFaqs} />

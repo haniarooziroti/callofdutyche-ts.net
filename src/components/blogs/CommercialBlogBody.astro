@@ -1,0 +1,162 @@
+---
+import type { CommercialBlogPost } from '../../data/blogs/types';
+import BlogPostCta from '../BlogPostCta.astro';
+import { PRIMARY_CHECKOUT_PATH } from '../../config/checkout';
+import { PRODUCT_BASE } from '../../config/site';
+import Icon from '../icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import { affiliateRel } from '../../config/affiliate';
+import BlogsCard from './BlogsCard.astro';
+import { getCommercialBlogPost } from '../../data/blogs/posts';
+
+interface Props {
+  post: CommercialBlogPost;
+}
+
+const { post } = Astro.props;
+const pricingHref = `${PRODUCT_BASE}call-of-duty-store/#pricing`;
+const midSection = Math.floor(post.sections.length / 2);
+const related = post.relatedSlugs
+  .map((slug) => getCommercialBlogPost(slug))
+  .filter((p): p is CommercialBlogPost => Boolean(p))
+  .slice(0, 3);
+
+const introParts = post.intro.split(/(?<=\.)\s+/);
+const introLead = introParts[0] ?? post.intro;
+const introRest = introParts.slice(1).join(' ');
+---
+
+<div class="commercial-blog">
+  <p class="blog-lead">{introLead}</p>
+  {
+    introRest ? (
+      <details class="blog-fold">
+        <summary>Why this guide exists</summary>
+        <p class="blog-fold__body" set:html={introRest} />
+      </details>
+    ) : null
+  }
+
+  <aside class="blog-quick-wins not-prose" aria-label="Key takeaways">
+    <p class="blog-quick-wins__label">Quick wins</p>
+    <ul>
+      {post.takeaways.slice(0, 4).map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </aside>
+
+  {
+    post.sections.map((section, i) => (
+      <section class="blog-section-card">
+        <div class="blog-section-card__head">
+          <span class="blog-section-card__num" aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          {section.level === 3 ? (
+            <h3 class="blog-section-card__title">{section.heading}</h3>
+          ) : (
+            <h2 class="blog-section-card__title">{section.heading}</h2>
+          )}
+        </div>
+        {section.paragraphs[0] ? <p class="blog-section-card__p" set:html={section.paragraphs[0]} /> : null}
+        {section.paragraphs.length > 1 ? (
+          <details class="blog-fold">
+            <summary>Continue reading this section</summary>
+            <div class="blog-fold__body">
+              {section.paragraphs.slice(1).map((p) => (
+                <p set:html={p} />
+              ))}
+            </div>
+          </details>
+        ) : null}
+        {i === 1 && post.table ? (
+          <div class="blog-table-wrap">
+            <table class="blog-table">
+              <thead>
+                <tr>
+                  {post.table.headers.map((h) => (
+                    <th>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {post.table.rows.map((row) => (
+                  <tr>
+                    {row.map((cell) => (
+                      <td>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : null}
+        {i === midSection - 1 ? (
+          <BlogPostCta title={post.midCtaTitle} html={post.midCtaHtml} href={PRIMARY_CHECKOUT_PATH} />
+        ) : null}
+      </section>
+    ))
+  }
+
+  {
+    post.checklist ? (
+      <ul class="blog-checklist not-prose">
+        {post.checklist.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    ) : null
+  }
+
+  <aside class="blog-takeaways not-prose">
+    <h2>Key takeaways</h2>
+    <ul>
+      {post.takeaways.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </aside>
+
+  <section class="blog-faq not-prose" aria-labelledby={`blog-faq-title-${post.slug}`}>
+    <h2 id={`blog-faq-title-${post.slug}`}>FAQ</h2>
+    {post.faqs.map((f) => (
+      <details class="blog-faq__item">
+        <summary>{f.q}</summary>
+        <p>{f.a}</p>
+      </details>
+    ))}
+  </section>
+
+  <aside class="blog-end-cta not-prose" aria-label="Checkout call to action">
+    <div set:html={post.endCtaHtml} />
+    <div class="blog-end-cta__actions">
+      <Button as="a" href={PRIMARY_CHECKOUT_PATH} rel={affiliateRel(PRIMARY_CHECKOUT_PATH)} data-plan="call-of-duty" variant="primary">
+        Buy now
+        <Icon name="arrowRight" size={16} />
+      </Button>
+      <Button as="a" href={pricingHref} variant="outline">
+        View pricing
+        <Icon name="arrowRight" size={16} />
+      </Button>
+    </div>
+    <p class="blog-end-cta__note">
+      Platform rules still apply. Check loader status after patches and keep presets conservative.
+    </p>
+  </aside>
+
+  {related.length > 0 ? (
+    <section class="blog-related not-prose" aria-labelledby="related-blogs-heading">
+      <h2 id="related-blogs-heading">Related guides</h2>
+      <div class="blog-related__grid">
+        {related.map((rel, i) => (
+          <BlogsCard post={rel} index={i + 3} />
+        ))}
+      </div>
+      <a href="/blogs/" class="blog-related__back">
+        Back to all blogs
+        <Icon name="arrowRight" size={16} />
+      </a>
+    </section>
+  ) : null}
+</div>

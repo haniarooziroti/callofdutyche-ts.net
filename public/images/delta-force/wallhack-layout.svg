@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Call of Duty wallhack skeleton through structure">
+  <rect width="960" height="540" fill="#0D0A14"/>
+  <rect x="280" y="80" width="400" height="380" fill="#1e1b2e" stroke="#312e45"/>
+  <path d="M360 120 L360 420 M520 100 L520 440 M640 140 L640 400" stroke="#475569" stroke-width="8"/>
+  <circle cx="400" cy="200" r="22" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M400 222 L400 320 M400 260 L460 300" stroke="#38bdf8" stroke-width="2"/>
+  <circle cx="580" cy="260" r="22" fill="none" stroke="#fb7185" stroke-width="2"/>
+  <path d="M580 282 L580 380 M580 320 L640 360" stroke="#fb7185" stroke-width="2"/>
+</svg>

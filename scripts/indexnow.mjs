@@ -1,0 +1,63 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { resolveDistRoot } from './dist-root.mjs';
+import { SITE_DOMAIN, resolveSiteOrigin } from './site-origin.mjs';
+
+resolveSiteOrigin();
+
+const root = process.cwd();
+const dist = resolveDistRoot(root);
+const key = process.env.INDEXNOW_KEY?.trim();
+
+function resolveIndexNowHost() {
+  const explicit = process.env.INDEXNOW_HOST?.trim();
+  if (explicit && explicit.includes('workers.dev')) {
+    throw new Error('INDEXNOW_HOST must not contain workers.dev. Use cs2-cheats.org.');
+  }
+  if (explicit) return explicit;
+  return SITE_DOMAIN;
+}
+
+const host = resolveIndexNowHost();
+
+if (!key) {
+  console.log('IndexNow: skipped (INDEXNOW_KEY not set).');
+  process.exit(0);
+}
+
+const sitemapPath = path.join(dist, 'sitemap.xml');
+if (!fs.existsSync(sitemapPath)) {
+  console.warn('IndexNow: dist/sitemap.xml missing — skipping ping.');
+  process.exit(0);
+}
+
+const sitemap = fs.readFileSync(sitemapPath, 'utf8');
+const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).slice(0, 10000);
+
+if (urlList.length === 0) {
+  console.warn('IndexNow: no URLs found in sitemap.');
+  process.exit(0);
+}
+
+const keyFile = path.join(dist, `${key}.txt`);
+fs.writeFileSync(keyFile, key, 'utf8');
+
+const payload = {
+  host,
+  key,
+  keyLocation: `https://${host}/${key}.txt`,
+  urlList,
+};
+
+const response = await fetch('https://api.indexnow.org/indexnow', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  body: JSON.stringify(payload),
+});
+
+if (response.ok) {
+  console.log(`IndexNow: submitted ${urlList.length} URL(s) (HTTP ${response.status}).`);
+} else {
+  const body = await response.text();
+  console.warn(`IndexNow: ping failed HTTP ${response.status}: ${body.slice(0, 200)}`);
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Call of Duty tactical night operations wide view">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D0A14"/>
+      <stop offset="100%" stop-color="#0F0C18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#sky)"/>
+  <rect x="0" y="420" width="1200" height="255" fill="#040306" opacity=".85"/>
+  <circle cx="980" cy="120" r="48" fill="#1a1528" stroke="#3d3558"/>
+  <rect x="140" y="280" width="320" height="180" fill="none" stroke="#5eead4" stroke-width="2" opacity=".7"/>
+  <rect x="520" y="220" width="280" height="200" fill="none" stroke="#fbbf24" stroke-width="2" opacity=".6"/>
+  <line x1="200" y1="340" x2="400" y2="340" stroke="#5eead4" stroke-width="1" opacity=".5"/>
+  <text x="60" y="640" fill="#8b83a8" font-family="system-ui,sans-serif" font-size="22">Call of Duty  large-scale operations</text>
+</svg>

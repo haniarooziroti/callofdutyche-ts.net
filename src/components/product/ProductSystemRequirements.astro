@@ -1,0 +1,33 @@
+---
+import type { SystemRequirement } from '../../data/products';
+import Icon from '../icons/Icon.astro';
+import SectionHeader from '../SectionHeader.astro';
+
+interface Props {
+  requirements: SystemRequirement[];
+}
+
+const { requirements } = Astro.props;
+---
+
+<section class="border-t border-border bg-muted/15 py-12 md:py-14" aria-labelledby="product-system-req-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <SectionHeader
+      eyebrow="System"
+      title="System requirements"
+      desc="Confirm Windows security features and platform settings before you enable the full module stack."
+      titleId="product-system-req-title"
+      titleLevel="h2"
+    />
+    <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {requirements.map((req) => (
+        <li class="flex items-center gap-3 rounded-xl border border-border/80 bg-card px-4 py-3.5 text-sm font-medium">
+          <span class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+            <Icon name={req.icon} size={18} class="icon-app--primary" />
+          </span>
+          {req.text}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
