@@ -1,7 +1,7 @@
 /** * Central titles/descriptions for high-traffic routes. * Titles: 50–60 chars; descriptions: 120–155 chars (see scripts/seo-check.mjs). */ export interface PageSeoEntry { title: string; description: string; } const hub = '/products/call-of-duty-cheats/'; export const PAGE_SEO: Record<string, PageSeoEntry> = { '/': {
-    title: 'Call of Duty cheat for PC | ESP, Aimbot & Modules',
+    title: 'Call of Duty cheat for PC buyers | ESP & aimbot hub',
     description:
-      'Call of Duty cheat for PC with ESP, aimbot, wallhack, and loot intel on COD CHEAT—compare modules, read guides, and open checkout when you are ready to buy.',
+      'Call of Duty cheat for PC with ESP, aimbot, wallhack, and loot on COD CHEAT—compare modules, read guides, and open checkout when you are ready.',
   }, [hub]: { title: 'Call of Duty Cheat Catalog | Features & Compatibility', description: 'Browse Call of Duty cheat modules for PC: ESP, aimbot, utilities, and compatibility notes. Compare features here, then open checkout for plans.', }, [`${hub}modules/`]: {
     title: 'Call of Duty Cheat Modules for ESP, Aimbot and Loot',
     description:
@@ -18,16 +18,16 @@
     title: 'Account Appeals for Call of Duty | Evidence Workspace',
     description:
       'Appeal workspace for Call of Duty players: organize ban notices, receipts, and timelines. Informational help—not a guaranteed unban. Review before you submit.',
-  }, '/blogs/': {
-    title: 'COD Cheat Guides & Blog Articles | cod-cheat.net',
+  },   '/blogs/': {
+    title: 'COD CHEAT guides and blog articles for PC buyers',
     description:
       'Call of Duty blogs and guides on ESP, aimbot, compatibility, PC settings, and checkout. Search guides on cod-cheat.net before you buy.',
-  }, '/reviews/': {
-    title: 'COD Cheat Reviews & Buyer Ratings Hub | PC',
+  },   '/reviews/': {
+    title: 'COD CHEAT buyer reviews and ratings | cod-cheat.net',
     description:
       'Buyer reviews for Call of Duty cheat: ESP, aimbot, loader setup, and support. Sort by date or rating on cod-cheat.net before checkout.',
-  }, '/forum/': {
-    title: 'COD CHEAT forum | Loader, ESP & aimbot threads',
+  },   '/forum/': {
+    title: 'COD CHEAT forum threads | loaders, ESP & aimbot hub',
     description:
       'COD CHEAT forum threads on loaders, ESP clutter, aimbot FOV, patch nights, and loot intel from PC players—read before checkout on cod-cheat.net.',
   }, '/faq/': { title: 'Call of Duty Cheat FAQ | Loader, Risk, and Checkout', description: 'FAQ on Call of Duty cheat modules, loader status, HWID tools, Cloud DMA, and checkout. Scan answers first, then open support or the product hub.', }, '/terms/': {
