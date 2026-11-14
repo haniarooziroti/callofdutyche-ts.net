@@ -101,7 +101,7 @@ export const productHubArticles = [
 ] as const;
 
 export const productRelatedForumSlugs = {
-  'call-of-duty-store': [
+  'modules': [
     'aimbot-fov-smoothness-ranked-ops',
     'esp-clutter-night-raids',
     'wallhack-skeleton-vs-box-only',
@@ -117,7 +117,7 @@ export const productRelatedForumSlugs = {
 const productBase = PRODUCT_BASE;
 
 const productPageSeoDescription: Record<string, string> = {
-  'call-of-duty-store':
+  'modules':
     'Call of Duty warfare cheats and operations esp with aimbot, wallhack, triggerbot, and extraction loot intel. Compare modules, then checkout for subscription or lifetime price.',
   'hwid-spoofer':
     'HWID spoofer for Call of Duty on Windows: disk and MAC rotation, restore checkpoints, and verification before relaunch.',
@@ -293,7 +293,7 @@ function slide(...keys: GalleryKey[]): ProductSlide[] {
 
 function slugFromHref(href: string): string {
   const segment = href.replace(productBase, '').replace(/^\//, '').replace(/\/$/, '');
-  return segment || 'call-of-duty-store';
+  return segment || 'modules';
 }
 
 const storefrontAbout: ProductPage['about'] = [
@@ -354,7 +354,7 @@ const productContent: Record<
     'overview' | 'images' | 'fullFeatures' | 'featureGroups' | 'goodToKnow' | 'limitations' | 'systemRequirements'
   >
 > = {
-  'call-of-duty-store': {
+  'modules': {
     images: slide('esp', 'aim', 'wall', 'loot', 'chams', 'night'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
@@ -420,7 +420,7 @@ const productContent: Record<
 };
 
 function buildStorefrontPage(): ProductPage {
-  const slug = 'call-of-duty-store';
+  const slug = 'modules';
   const content = productContent[slug]!;
   return {
     slug,

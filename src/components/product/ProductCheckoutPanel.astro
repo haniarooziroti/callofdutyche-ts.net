@@ -15,7 +15,7 @@ interface Props {
 const { product } = Astro.props;
 const checkoutHref = product.buyUrl || checkoutForSlug(product.slug);
 const featureItems = product.fullFeatures.slice(0, 6);
-const showDmaSpooferRow = product.slug === 'call-of-duty-store';
+const showDmaSpooferRow = product.slug === 'modules';
 const spooferPage = productPath('hwid-spoofer');
 const cloudDmaPage = productPath('cloud-dma');
 const cloudCheckout = checkoutForSlug('cloud-dma');

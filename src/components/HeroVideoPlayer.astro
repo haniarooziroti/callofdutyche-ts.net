@@ -16,6 +16,8 @@ const videoSrc = HERO_VIDEO.src;
     poster={poster}
     preload="metadata"
     playsinline
+    muted
+    defaultMuted
     controls={false}
     aria-label="Call of Duty gameplay preview — press play to start"
   >
@@ -37,13 +39,12 @@ const videoSrc = HERO_VIDEO.src;
     </button>
     <button
       type="button"
-      class="inline-flex h-10 min-w-[7.5rem] items-center justify-center gap-2 rounded-lg border border-primary/40 bg-primary px-4 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      class="inline-flex size-10 items-center justify-center rounded-lg border border-primary/40 bg-primary text-primary-foreground transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       data-hero-video-play
       aria-label="Play video"
       data-state="paused"
     >
       <span class="hero-video__play-glyph inline-flex size-[18px] items-center justify-center" data-hero-video-play-glyph aria-hidden="true">▶</span>
-      <span data-hero-video-play-label>Play</span>
     </button>
     <button
       type="button"
@@ -65,10 +66,13 @@ const videoSrc = HERO_VIDEO.src;
 
     const video = root.querySelector<HTMLVideoElement>('[data-hero-video-el]');
     const playBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-play]');
-    const playLabel = root.querySelector<HTMLElement>('[data-hero-video-play-label]');
     const backBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-back]');
     const forwardBtn = root.querySelector<HTMLButtonElement>('[data-hero-video-forward]');
     if (!video || !playBtn) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
 
     const glyph = root.querySelector<HTMLElement>('[data-hero-video-play-glyph]');
 
@@ -76,7 +80,6 @@ const videoSrc = HERO_VIDEO.src;
       const playing = !video.paused && !video.ended;
       playBtn.dataset.state = playing ? 'playing' : 'paused';
       playBtn.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
-      if (playLabel) playLabel.textContent = playing ? 'Pause' : 'Play';
       if (glyph) glyph.textContent = playing ? '❚❚' : '▶';
     };
 

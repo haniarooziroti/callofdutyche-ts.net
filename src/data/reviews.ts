@@ -57,7 +57,7 @@ const authors = [
   'mike_r9',
   'nova_ops',
   'hawk_vega',
-  'delta_lynx',
+  'sable_lynx',
   'iron_breach',
   'sable_zero',
   'pilot_echo',

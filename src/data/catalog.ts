@@ -21,7 +21,7 @@ export interface CatalogCardData {
 
 /** Home + hub grid: main Call of Duty cheat module page plus utility boxes (HWID, UGC, Cloud DMA). */
 export function getCatalogCards(): CatalogCardData[] {
-  const storefront = productPages.find((p) => p.slug === 'call-of-duty-store');
+  const storefront = productPages.find((p) => p.slug === 'modules');
 
   const main: CatalogCardData[] = storefront
     ? [

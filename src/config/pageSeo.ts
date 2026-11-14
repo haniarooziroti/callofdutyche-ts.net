@@ -21,7 +21,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description:
       'Browse Call of Duty cheat modules for PC: ESP, aimbot, utilities, and compatibility notes. Compare features here, then open checkout for plans.',
   },
-  [`${hub}call-of-duty-store/`]: {
+  [`${hub}modules/`]: {
     title: 'Call of Duty Cheat Modules for ESP, Aimbot and Loot',
     description:
       'Call of Duty cheat with radar hack, no recoil assists, item esp, and external cheat loader path where listed. Read scope here, then open checkout for price.',
@@ -52,9 +52,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Call of Duty blogs and guides on ESP, aimbot, compatibility, PC settings, and checkout. Search guides before you buy.',
   },
   '/reviews/': {
-    title: 'Call of Duty Cheat Reviews from Buyers | Read First',
+    title: 'Call of Duty Cheat Reviews | Buyer Ratings',
     description:
-      'Call of Duty cheat reviews from buyers: ESP, aimbot, loader setup, and support outcomes. Read ratings before you open checkout.',
+      'Verified buyer reviews for Call of Duty cheats: ESP, aimbot, loader setup, and support. Sort by date or rating before checkout.',
   },
   '/forum/': {
     title: 'Call of Duty cheats forum: setup and aimbot threads',

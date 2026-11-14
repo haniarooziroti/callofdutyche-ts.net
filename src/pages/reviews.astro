@@ -1,4 +1,5 @@
 ---
+import '../styles/reviews.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
@@ -11,6 +12,9 @@ const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Reviews', path: '/reviews/' },
 ];
+
+const starFill = (rating: number) =>
+  Array.from({ length: 5 }, (_, i) => (i < rating ? '★' : '☆')).join('');
 
 const jsonLd = [
   breadcrumbSchema(breadcrumbs),
@@ -42,40 +46,124 @@ const jsonLd = [
 ---
 
 <BaseLayout title={seo.title} description={seo.description} jsonLd={jsonLd}>
-  <section class="py-8 md:py-12">
-    <div class="mx-auto max-w-6xl px-5">
+  <section class="reviews-page py-8 md:py-12">
+    <div class="mx-auto max-w-3xl px-5">
       <Breadcrumbs items={breadcrumbs} />
-      <header class="mt-6 max-w-3xl space-y-3">
-        <p class="text-xs font-semibold uppercase tracking-wider text-primary">{t.reviews.eyebrow}</p>
-        <h1 class="text-3xl font-bold md:text-4xl">{t.reviews.title}</h1>
-        <p class="text-lg text-muted-foreground">{t.reviews.subtitle}</p>
-        <p class="text-sm text-muted-foreground" aria-live="polite">
-          <span class="font-semibold text-foreground">{REVIEW_SUMMARY.average.toFixed(1)}</span> average from{' '}
-          <span class="font-semibold text-foreground">{REVIEW_SUMMARY.total}</span> buyer ratings on file — showing{' '}
-          {buyerReviews.length} recent write-ups below.
-        </p>
+      <header class="mt-6 space-y-2">
+        <h1 class="text-3xl font-bold md:text-4xl">Reviews: player feedback</h1>
+        <p class="text-xl font-bold text-foreground">{t.reviews.kicker}</p>
+        <p class="text-base text-muted-foreground">{t.reviews.subtitle}</p>
       </header>
 
-      <ul class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      <div class="reviews-summary" aria-label="Average buyer rating">
+        <div class="reviews-summary__score">
+          <div>
+            <p class="reviews-summary__value">
+              {REVIEW_SUMMARY.average.toFixed(1)} <span class="text-lg text-muted-foreground">/ 5</span>
+            </p>
+            <p class="reviews-summary__label">Verified buyer</p>
+          </div>
+          <p class="reviews-stars" aria-hidden="true">
+            {starFill(Math.round(REVIEW_SUMMARY.average))}
+          </p>
+        </div>
+        <p class="reviews-summary__count">
+          <strong class="text-foreground">{REVIEW_SUMMARY.total}</strong> Verified buyers
+        </p>
+      </div>
+
+      <div class="reviews-toolbar">
+        <label>
+          Sort by
+          <select data-reviews-sort aria-label="Sort reviews">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="rating-high">Highest rating</option>
+            <option value="rating-low">Lowest rating</option>
+          </select>
+        </label>
+        <label>
+          Filter reviews
+          <select data-reviews-filter aria-label="Filter reviews by rating">
+            <option value="all">All ratings</option>
+            <option value="5">5 stars</option>
+            <option value="4">4 stars</option>
+            <option value="3">3 stars</option>
+          </select>
+        </label>
+      </div>
+      <p class="reviews-toolbar__meta" data-reviews-count aria-live="polite">
+        {buyerReviews.length} reviews shown
+      </p>
+
+      <ul class="reviews-list" data-reviews-list>
         {buyerReviews.map((review) => (
-          <li class="rounded-2xl border border-border bg-card/70 p-5 shadow-sm">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <p class="font-semibold text-foreground">{review.author}</p>
-                <p class="text-xs text-muted-foreground">{review.role}</p>
+          <li
+            class="reviews-card"
+            data-review-card
+            data-rating={review.rating}
+            data-date={review.date}
+          >
+            <div class="reviews-card__head">
+              <div class="reviews-card__who">
+                <b>{review.author}</b>
+                <span>{review.role}</span>
               </div>
-              <p class="text-sm font-bold text-primary" aria-label={`Rated ${review.rating} out of 5`}>
-                {'★'.repeat(review.rating)}
-                <span class="sr-only">{review.rating} out of 5</span>
-              </p>
+              <div class="reviews-card__meta">
+                <p class="reviews-stars" aria-label={`${review.rating} out of 5`}>
+                  {starFill(review.rating)}
+                </p>
+                <time datetime={review.date}>{review.date}</time>
+              </div>
             </div>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{review.text}</p>
-            <time class="mt-4 block text-xs text-muted-foreground" datetime={review.date}>
-              {review.date}
-            </time>
+            <p class="reviews-card__quote">&ldquo;{review.text}&rdquo;</p>
           </li>
         ))}
       </ul>
+      <p class="reviews-empty hidden" data-reviews-empty>No reviews match this filter.</p>
     </div>
   </section>
+
+  <script>
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-review-card]')];
+    const sortEl = document.querySelector<HTMLSelectElement>('[data-reviews-sort]');
+    const filterEl = document.querySelector<HTMLSelectElement>('[data-reviews-filter]');
+    const countEl = document.querySelector<HTMLElement>('[data-reviews-count]');
+    const emptyEl = document.querySelector<HTMLElement>('[data-reviews-empty]');
+    const list = document.querySelector<HTMLElement>('[data-reviews-list]');
+
+    function updateReviews() {
+      const sort = sortEl?.value ?? 'newest';
+      const filter = filterEl?.value ?? 'all';
+      const ranked = [...cards].sort((a, b) => {
+        const dateA = a.dataset.date ?? '';
+        const dateB = b.dataset.date ?? '';
+        const ratingA = Number(a.dataset.rating);
+        const ratingB = Number(b.dataset.rating);
+        if (sort === 'oldest') return dateA.localeCompare(dateB);
+        if (sort === 'rating-high') return ratingB - ratingA || dateB.localeCompare(dateA);
+        if (sort === 'rating-low') return ratingA - ratingB || dateB.localeCompare(dateA);
+        return dateB.localeCompare(dateA);
+      });
+
+      let visible = 0;
+      ranked.forEach((card) => {
+        const rating = card.dataset.rating ?? '';
+        const show = filter === 'all' || rating === filter;
+        card.hidden = !show;
+        if (show) {
+          visible += 1;
+          list?.append(card);
+        }
+      });
+
+      if (countEl) countEl.textContent = `${visible} review${visible === 1 ? '' : 's'} shown`;
+      emptyEl?.classList.toggle('hidden', visible > 0);
+    }
+
+    sortEl?.addEventListener('change', updateReviews);
+    filterEl?.addEventListener('change', updateReviews);
+    updateReviews();
+    document.addEventListener('astro:page-load', updateReviews);
+  </script>
 </BaseLayout>

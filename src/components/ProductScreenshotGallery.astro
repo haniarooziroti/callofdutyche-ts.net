@@ -88,7 +88,9 @@ const first = images[0];
       if (root.hasAttribute('data-gallery-bound')) return;
       root.setAttribute('data-gallery-bound', '');
 
-      const main = root.querySelector<HTMLImageElement>('.product-gallery__image');
+      const main =
+        root.querySelector<HTMLImageElement>('.product-gallery__main img.product-gallery__image') ??
+        root.querySelector<HTMLImageElement>('.product-gallery__main img');
       const thumbs = root.querySelectorAll<HTMLButtonElement>('[data-product-gallery-thumb]');
       if (!main || !thumbs.length) return;
 
@@ -111,6 +113,8 @@ const first = images[0];
     });
   };
 
-  initProductGalleries();
-  document.addEventListener('astro:after-swap', initProductGalleries);
+  const boot = () => initProductGalleries();
+  boot();
+  document.addEventListener('astro:page-load', boot);
+  document.addEventListener('astro:after-swap', boot);
 </script>

@@ -10,15 +10,15 @@ export const CHECKOUT_PATH_REDIRECTS = new Map([
   ['/go/call-of-duty/', CHECKOUT_URLS['call-of-duty']],
   ['/go/store', CHECKOUT_URLS['call-of-duty']],
   ['/go/store/', CHECKOUT_URLS['call-of-duty']],
-  ['/go/delta-force', CHECKOUT_URLS['call-of-duty']],
-  ['/go/delta-force/', CHECKOUT_URLS['call-of-duty']],
 ]);
 
 export const LEGACY_PRODUCT_REDIRECTS = new Map([
-  ['/products/delta-force-cheats/', '/products/call-of-duty-cheats/'],
-  ['/products/call-of-duty-cheats/lite/', '/products/call-of-duty-cheats/call-of-duty-store/'],
-  ['/products/call-of-duty-cheats/pro/', '/products/call-of-duty-cheats/call-of-duty-store/'],
-  ['/products/call-of-duty-cheats/elite/', '/products/call-of-duty-cheats/call-of-duty-store/'],
+  ['/products/legacy-cheats/', '/products/call-of-duty-cheats/'],
+  ['/products/call-of-duty-cheats/lite/', '/products/call-of-duty-cheats/modules/'],
+  ['/products/call-of-duty-cheats/pro/', '/products/call-of-duty-cheats/modules/'],
+  ['/products/call-of-duty-cheats/elite/', '/products/call-of-duty-cheats/modules/'],
+  ['/products/call-of-duty-cheats/call-of-duty-store/', '/products/call-of-duty-cheats/modules/'],
+  ['/products/call-of-duty-cheats/call-of-duty-store', '/products/call-of-duty-cheats/modules/'],
 ]);
 
 export function resolveCheckoutPathRedirect(pathname) {

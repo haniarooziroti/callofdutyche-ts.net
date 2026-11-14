@@ -291,8 +291,8 @@ const meta: BlogMeta[] = [
 ];
 
 function applyCatalogPrices(text: string): string {
-  const monthly = getProductPlans('call-of-duty-store').find((plan) => plan.id === 'monthly');
-  const lifetime = getProductPlans('call-of-duty-store').find((plan) => plan.id === 'lifetime');
+  const monthly = getProductPlans('modules').find((plan) => plan.id === 'monthly');
+  const lifetime = getProductPlans('modules').find((plan) => plan.id === 'lifetime');
   const ugc = getProductPlans('ugc')[0];
   let next = text;
   if (monthly) next = next.replaceAll('$35', formatPlanPrice(monthly.priceUsd));

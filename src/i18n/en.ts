@@ -31,7 +31,7 @@ export const en: Translations = {
   reviews: {
     eyebrow: 'Reviews',
     title: 'Call of Duty cheat reviews from buyers',
-    kicker: 'Reviews on Call of Duty cheats',
+    kicker: 'Reviews: Call of Duty cheats',
     subtitle:
       'Reviews on aimbot, ESP, wallhack, setup, and support from verified buyers on cod-cheats.net.',
   },
@@ -288,7 +288,7 @@ export const en: Translations = {
       {
         tag: 'Setup',
         title: 'How to install Call of Duty cheats from the portal',
-        slug: 'how-to-install-delta-force-cheats',
+        slug: 'cod-cheats-setup',
         image: SEO_MEDIA.heroOperations,
         desc: 'Buy Call of Duty cheats with fewer boot errors—portal download, verify, and first-launch steps before you queue ranked.',
         date: 'Oct 28, 2025',
@@ -297,7 +297,7 @@ export const en: Translations = {
       {
         tag: 'Features',
         title: 'Call of Duty ESP settings that stay readable in clutches',
-        slug: 'delta-force-esp-settings',
+        slug: 'cod-esp-settings',
         image: SEO_MEDIA.nightRaid,
         desc: 'Pick ESP presets before checkout—box thickness, glow, and teammate mute that stay readable on night Operations maps.',
         date: 'Oct 25, 2025',
@@ -306,7 +306,7 @@ export const en: Translations = {
       {
         tag: 'Features',
         title: 'Aimbot smoothing for Call of Duty ranked queues',
-        slug: 'delta-force-aimbot-smoothing',
+        slug: 'cod-aimbot-fov',
         image: SEO_MEDIA.aimbotHud,
         desc: 'Lock aimbot knobs before you pay—FOV caps, bone priority, and delay curves for ranked supported PC titles queues.',
         date: 'Oct 22, 2025',
@@ -315,7 +315,7 @@ export const en: Translations = {
       {
         tag: 'Safety',
         title: 'Call of Duty anti-cheat: what buyers should expect',
-        slug: 'delta-force-anti-cheat-notes',
+        slug: 'cod-patch-day-status',
         image: SEO_MEDIA.espTactical,
         desc: 'Platform integrity tools, patch nights, and how operators pause modules after supported PC titles updates.',
         date: 'Oct 19, 2025',
@@ -324,7 +324,7 @@ export const en: Translations = {
       {
         tag: 'Setup',
         title: 'Wallhack-style vision without blocking your crosshair',
-        slug: 'delta-force-wallhack-layout',
+        slug: 'cod-wallhack-guide',
         image: SEO_MEDIA.wallhackLayout,
         desc: 'Choose a wallhack layout before purchase—skeleton under glow, bomb intel in corners, crosshair kept clear.',
         date: 'Oct 15, 2025',
@@ -333,7 +333,7 @@ export const en: Translations = {
       {
         tag: 'Features',
         title: 'Triggerbot timing for Call of Duty duel peeks',
-        slug: 'delta-force-triggerbot-timing',
+        slug: 'cod-no-recoil-guide',
         image: SEO_MEDIA.lootIntel,
         desc: 'Delay vs burst modes for close-angle duels on breach and extraction sites.',
         date: 'Oct 12, 2025',
@@ -342,7 +342,7 @@ export const en: Translations = {
       {
         tag: 'Troubleshooting',
         title: 'VAC error messages after a Call of Duty patch',
-        slug: 'delta-force-loader-errors',
+        slug: 'cod-patch-log',
         image: SEO_MEDIA.chamsPreview,
         desc: 'Verify the PC client, restart if errors persist, and pause cheats until the portal banner clears.',
         date: 'Oct 8, 2025',
@@ -351,7 +351,7 @@ export const en: Translations = {
       {
         tag: 'Setup',
         title: 'HWID spoofing before a new Call of Duty account',
-        slug: 'hwid-spoof-new-delta-force-account',
+        slug: 'cod-cheats-faq',
         image: SEO_MEDIA.heroOperations,
         desc: 'Cold boot checklist when hardware is tied to an old restriction.',
         date: 'Oct 4, 2025',
@@ -360,7 +360,7 @@ export const en: Translations = {
       {
         tag: 'Features',
         title: 'Call of Duty radar hack overlays vs audio',
-        slug: 'delta-force-radar-overlay-tips',
+        slug: 'cod-esp-guide',
         image: SEO_MEDIA.dmaSetup,
         desc: 'When to lean on radar reinforcement dots and when squad callouts should stay primary.',
         date: 'Sep 30, 2025',
@@ -369,7 +369,7 @@ export const en: Translations = {
       {
         tag: 'Setup',
         title: 'Stream proof setup for Call of Duty overlays',
-        slug: 'delta-force-stream-proof-overlays',
+        slug: 'cod-stream-safe-obs',
         image: SEO_MEDIA.chamsPreview,
         desc: 'OBS scene testing so viewers see clean gameplay while you keep intel.',
         date: 'Sep 26, 2025',
@@ -591,7 +591,7 @@ export const en: Translations = {
     explore: 'Explore',
     exploreLinks: [
       { href: '/', label: 'Home feature tour', ariaLabel: 'Features', scrollTarget: 'features' },
-      { href: `${productBase}call-of-duty-store/`, label: 'Cheat modules page', ariaLabel: 'Call of Duty cheats' },
+      { href: `${productBase}modules/`, label: 'Cheat modules page', ariaLabel: 'Call of Duty cheats' },
       { href: productBase, label: 'Product catalog hub', ariaLabel: 'Products' },
       { href: '/forum/', label: 'Community forum', ariaLabel: 'Call of Duty forum' },
       { href: '/blogs/', label: 'Call of Duty guides', ariaLabel: 'Call of Duty blogs and guides' },

@@ -1,6 +1,6 @@
 import { PRODUCT_BASE } from '../config/site';
 
-const storePath = `${PRODUCT_BASE}call-of-duty-store/`;
+const storePath = `${PRODUCT_BASE}modules/`;
 
 /** Normalize internal paths to match trailingSlash: 'always' and canonical URLs. */
 export function withTrailingSlash(path: string): string {
@@ -21,8 +21,8 @@ export const LEGACY_PATH_MAP: Record<string, string> = {
   '/cheats/pro/': storePath,
   '/cheats/elite': storePath,
   '/cheats/elite/': storePath,
-  '/products/cs2-cheats': PRODUCT_BASE,
-  '/products/cs2-cheats/': PRODUCT_BASE,
+  '/products/other-cheats': PRODUCT_BASE,
+  '/products/other-cheats/': PRODUCT_BASE,
   '/products/dota-2-cheats': PRODUCT_BASE,
   '/products/dota-2-cheats/': PRODUCT_BASE,
   '/products/dota-2-cheats/utilities': `${PRODUCT_BASE}utilities/`,

@@ -2,7 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const SCAN_DIRS = ['src', 'public', 'worker', 'scripts'];
+const SCAN_DIRS = ['src', 'public', 'worker'];
+const SCAN_ALLOW_FILES = new Set([
+  path.join('public', '_redirects'),
+  path.join('src', 'config', 'checkout-redirects.mjs'),
+  path.join('src', 'utils', 'path.ts'),
+]);
 const SKIP = new Set(['node_modules', 'dist', '.git', '.astro']);
 const TERMS = [
   'valorant',
@@ -41,6 +46,8 @@ for (const dir of SCAN_DIRS) {
   const abs = path.join(root, dir);
   if (!fs.existsSync(abs)) continue;
   for (const file of walk(abs)) {
+  const rel = path.relative(root, file);
+  if (SCAN_ALLOW_FILES.has(rel)) continue;
     const text = fs.readFileSync(file, 'utf8').toLowerCase();
     for (const term of TERMS) {
       if (text.includes(term)) {

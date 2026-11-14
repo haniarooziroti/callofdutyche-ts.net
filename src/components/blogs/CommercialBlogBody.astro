@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const pricingHref = `${PRODUCT_BASE}call-of-duty-store/#pricing`;
+const pricingHref = `${PRODUCT_BASE}modules/#pricing`;
 const midSection = Math.floor(post.sections.length / 2);
 const related = post.relatedSlugs
   .map((slug) => getCommercialBlogPost(slug))

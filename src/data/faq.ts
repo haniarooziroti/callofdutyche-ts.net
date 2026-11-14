@@ -33,7 +33,7 @@ function externalCommunityLink(text: string, href: string, ariaLabel: string): s
   return `<a href="${safe}"${rel} aria-label="${label}">${text}</a>`;
 }
 
-const dfModulesPage = link('Call of Duty cheat modules page', productPath('call-of-duty-store'));
+const dfModulesPage = link('Call of Duty cheat modules page', productPath('modules'));
 const productsHub = link('Call of Duty cheat catalog hub', ROUTES.products);
 const hwid = link('Call of Duty HWID spoofer utility page', productPath('hwid-spoofer'));
 const ugc = link('UGC ban-appeal workspace page', productPath('ugc'));
@@ -91,7 +91,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqWhatIsEsp',
     q: 'What is Call of Duty ESP?',
     a: `Call of Duty esp draws players, weapons, and loot intel on your screen. Start with thin operations overlays on ${dfModulesPage} before you enable warfare aimbot layers.`,
-    scopes: ['call-of-duty-store'],
+    scopes: ['modules'],
   },
   {
     id: 'esp-vs-aim',
@@ -106,7 +106,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqWhichTierEsp',
     q: 'Can I run ESP without aim assist?',
     a: a('Yes—use intel-first presets on the modules page: thin boxes, loot esp filters, and radar hack hints before you enable smoothing or triggers.'),
-    scopes: ['call-of-duty-store'],
+    scopes: ['modules'],
   },
   {
     id: 'which-tier-aim',
@@ -114,7 +114,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqWhichTierScripts',
     q: 'Where do aim smoothing and triggers show up?',
     a: `The seller bundles combat assists in the same module stack described on ${dfModulesPage}—enable them only after deathmatch tests.`,
-    scopes: ['call-of-duty-store'],
+    scopes: ['modules'],
   },
   {
     id: 'rank-lite-vs-pro',
@@ -129,7 +129,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqEliteSlots',
     q: 'Are Call of Duty cheat keys in stock?',
     a: a('Keys show in stock on the linked store while the portal banner is green. If a patch pauses delivery, wait for the status update—do not buy twice.'),
-    scopes: ['call-of-duty-store'],
+    scopes: ['modules'],
   },
   {
     id: 'stream-proof',

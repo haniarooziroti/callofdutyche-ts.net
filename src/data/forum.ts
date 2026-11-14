@@ -464,7 +464,7 @@ export const forumPosts: ForumPost[] = [
     ],
   },
   {
-    slug: 'cod-merchant-checkout-plans',
+    slug: 'cod-checkout-plans',
     category: 'Checkout',
     categoryTone: 'blue',
     title: 'Where plan pricing shows',
@@ -504,7 +504,7 @@ export function getForumPost(slug: string): ForumPost | undefined {
 }
 
 export const productRelatedForumSlugs: Record<string, string[]> = {
-  'call-of-duty-store': [
+  'modules': [
     'aimbot-fov-smoothness-ranked-ops',
     'esp-clutter-night-raids',
     'wallhack-skeleton-vs-box-only',

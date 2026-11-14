@@ -1,5 +1,5 @@
 export declare const CHECKOUT_URLS: {
-  readonly cs2: string;
+  readonly 'call-of-duty': string;
 };
 
 export declare const CHECKOUT_PATH_REDIRECTS: ReadonlyMap<string, string>;

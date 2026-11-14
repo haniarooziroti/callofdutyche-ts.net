@@ -66,7 +66,7 @@ export const heroStatIcons: IconName[] = [
 ];
 
 export const cheatTierIcons: Record<string, IconName> = {
-  CS2: 'crosshair',
+  CallOfDuty: 'crosshair',
   Lite: 'tierLite',
   Pro: 'tierPro',
   Elite: 'tierElite',

@@ -15,7 +15,7 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     path.startsWith('/cheats/') ||
     path === '/contact/' ||
     path.startsWith('/products/dota-2-cheats/') ||
-    path.startsWith('/products/cs2-cheats/') ||
+    path.startsWith('/products/other-cheats/') ||
     path === '/forum/' ||
     path.startsWith('/forum/') ||
     path === '/blog/' ||

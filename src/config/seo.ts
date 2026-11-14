@@ -82,7 +82,7 @@ export function pageTitle(keyword: string, suffixSite = t.site.domain): string {
 
 /** Product detail `<title>` — 50–60 chars with main cheat page vs utility phrasing. */
 export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | 'slug'>): string {
-  if (product.slug === 'call-of-duty-store') {
+  if (product.slug === 'modules') {
     return 'Call of Duty Cheat Modules for ESP, Aimbot and Loot';
   }
   if (product.slug === 'cloud-dma') {

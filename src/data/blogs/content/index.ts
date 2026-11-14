@@ -10,13 +10,13 @@ export const articlesBySlug: Record<string, {
   endCtaHtml: string;
 }> = {
   'buy-cod-cheats': {
-    intro: "Checkout for Call of Duty cheats is a short sequence: read the module list, open the store link from this site, pay on that store, and save the receipt email for the loader download. This article is the step list. <a href=\"/products/cod-cheats/\">Monthly and lifetime plan prices</a> stay on the pricing page, and the <a href=\"/\">PC feature overview</a> stays on the homepage. Ban paperwork is on the <a href=\"/products/cod-cheats/ugc/\">appeal paperwork page</a>. HWID and Cloud DMA live on the <a href=\"/products/cod-cheats/utilities/\">utilities comparison</a>. Nothing here promises undetected play.",
+    intro: "Checkout for Call of Duty cheats is a short sequence: read the module list, open the store link from this site, pay on that store, and save the receipt email for the loader download. This article is the step list. <a href=\"/products/call-of-duty-cheats/\">Monthly and lifetime plan prices</a> stay on the pricing page, and the <a href=\"/\">PC feature overview</a> stays on the homepage. Ban paperwork is on the <a href=\"/products/call-of-duty-cheats/ugc/\">appeal paperwork page</a>. HWID and Cloud DMA live on the <a href=\"/products/call-of-duty-cheats/utilities/\">utilities comparison</a>. Nothing here promises undetected play.",
     sections: [
       {
         heading: "Map your modes before you open checkout",
         paragraphs: [
           "Multiplayer rewards wide awareness on contested lanes and vehicle pushes, so many buyers start with player ESP and a conservative aim assist profile before they stack more vision layers. Multiplayer firefights are tighter: breach stairs, objective holds, and rotating squads punish overlays that cover the center of the screen. If supported PC titles extraction is your main loop, loot intel and distance tags often matter as much as combat assists because timed evac windows force fast routing decisions across multi-floor sites.",
-          "Write down your top two modes and one map type—urban night, open desert, or industrial interior—then compare module lists on the <a href=\"/products/cod-cheats/\">product hub</a> instead of grabbing every toggle at once. Unlisted behaviors belong in <a href=\"/faq/\">FAQ</a> threads before you pay. Pairing vision with per-weapon recoil control usually beats buying duplicate aim features you never enable in ranked queues.",
+          "Write down your top two modes and one map type—urban night, open desert, or industrial interior—then compare module lists on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> instead of grabbing every toggle at once. Unlisted behaviors belong in <a href=\"/faq/\">FAQ</a> threads before you pay. Pairing vision with per-weapon recoil control usually beats buying duplicate aim features you never enable in ranked queues.",
           "Loadout notes belong beside module choices: long-range Havoc kits pair with lower ESP density, while breach Multiplayer kits may temporarily raise skeleton visibility on stairs you practice weekly.",
         ],
       },
@@ -24,7 +24,7 @@ export const articlesBySlug: Record<string, {
         heading: "Read plan length against your play hours",
         paragraphs: [
           "Our store lists monthly access at $35 and lifetime at $150 on the pricing panel. Short-term keys appear only when the store actively lists them—do not assume a trial SKU exists if you do not see it beside monthly and lifetime rows. Casual weekends often fit monthly billing; daily grind across seasons makes lifetime worth modeling against repeated renewals.",
-          "Open <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> in the same tab as the module matrix so you are not surprised by renewal windows mid-season. Lifetime does not remove patch-day pauses: you still wait for loader updates and retest before ranked Multiplayer. Keep renewal receipts if you switch PCs so <a href=\"/support/\">support</a> can re-link portal download access on Windows 10 or Windows 11.",
+          "Open <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> in the same tab as the module matrix so you are not surprised by renewal windows mid-season. Lifetime does not remove patch-day pauses: you still wait for loader updates and retest before ranked Multiplayer. Keep renewal receipts if you switch PCs so <a href=\"/support/\">support</a> can re-link portal download access on Windows 10 or Windows 11.",
           "Screenshot the pricing row you selected so renewals do not surprise you mid-Havoc season; monthly renewals should align with the same email you use for portal login.",
         ],
       },
@@ -81,7 +81,7 @@ export const articlesBySlug: Record<string, {
       { q: "Can I buy right after a supported PC titles patch?", a: "You can pay anytime, but wait for a green or cleared status banner and retest in a private match before ranked queues to reduce risk." },
     ],
     midCtaTitle: "Ready to match modules to your queue?",
-    midCtaHtml: "<p>Compare ESP, aim, and recoil scope on the <a href=\"/products/cod-cheats/\">product hub</a>, confirm <a href=\"/products/cod-cheats/cod-store/#pricing\">monthly and lifetime pricing</a>, then open <a href=\"/go/call-of-duty/\">checkout</a> when your mode checklist is done.</p>",
+    midCtaHtml: "<p>Compare ESP, aim, and recoil scope on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, confirm <a href=\"/products/call-of-duty-cheats/modules/#pricing\">monthly and lifetime pricing</a>, then open <a href=\"/go/call-of-duty/\">checkout</a> when your mode checklist is done.</p>",
     endCtaHtml: "<p>Questions on delivery or Defender steps? Read <a href=\"/faq/\">FAQ</a>, open a <a href=\"/support/\">support</a> ticket with your order ID, or browse <a href=\"/reviews/\">reviews</a> before you <a href=\"/go/call-of-duty/\">checkout</a>.</p>",  },
   'cod-aimbot-fov': {
     intro: "Aim assist FOV and smoothing curves decide whether Call of Duty tracking looks intentional in kill cams—or obviously robotic on Multiplayer replays. This article focuses on FOV rings, bone priority, and separate hip versus ADS tuning for Multiplayer CQB and longer extraction lanes. Commercial buyers should tune in private matches, check loader status after patches, and only then decide whether to extend a monthly plan or lifetime license. We do not promise undetected behavior or ban-free outcomes. Recording baseline clips in private customs helps you compare smoothing after each supported PC titles micro-patch without polluting ranked stats or clan scrims.",
@@ -100,7 +100,7 @@ export const articlesBySlug: Record<string, {
         level: 2,
         paragraphs: [
           "Breach stairs and objective rooms favor chest or closest-bone selection over hard head priority until you verify peek timing. Smoothing should rise slightly for hip fire in tight spaces but drop on ADS so flicks feel committed when you hold plant sites.",
-          "Pair aim settings with thin ESP boxes from the <a href=\"/products/cod-cheats/\">product page</a> so the FOV ring is not hidden behind thick overlays. If kill cams show linear paths, add humanization or delay steps listed in your module doc—not maximum snap speed.",
+          "Pair aim settings with thin ESP boxes from the <a href=\"/products/call-of-duty-cheats/\">product page</a> so the FOV ring is not hidden behind thick overlays. If kill cams show linear paths, add humanization or delay steps listed in your module doc—not maximum snap speed.",
           "Plant-site anchors in Multiplayer often need lower FOV than rotate paths—duplicate presets per site instead of dragging one ranked profile across every bomb map.",
           "Private clients with fixed player counts help compare smoothing without randoms walking through test lanes on Havoc custom maps.",
         ],
@@ -133,7 +133,7 @@ export const articlesBySlug: Record<string, {
       {
         heading: "Buying aim modules responsibly",
         paragraphs: [
-          "Aim features ship inside the broader Call of Duty package—confirm they are listed for your branch before you pay monthly $35 or lifetime $150 on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a>. Short-term keys only apply when the store shows them beside standard plans.",
+          "Aim features ship inside the broader Call of Duty package—confirm they are listed for your branch before you pay monthly $35 or lifetime $150 on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a>. Short-term keys only apply when the store shows them beside standard plans.",
           "Download from the portal, complete Windows setup, and open <a href=\"/support/\">support</a> with loader logs if assist fails to attach after a patch. Conservative FOV plus status discipline reduces risk more than any marketing claim about safety.",
           "Export smoothing tables when the loader allows; retyping curves after reinstall wastes evenings you could spend in supported PC titles routings.",
         ],
@@ -163,7 +163,7 @@ export const articlesBySlug: Record<string, {
       { q: "Is aim assist included in the $35 monthly plan?", a: "If the product matrix lists combat assist for your branch, it is in scope for the active billing period; confirm modules before checkout." },
     ],
     midCtaTitle: "Tune FOV, then pick your plan",
-    midCtaHtml: "<p>Map aim modules on the <a href=\"/products/cod-cheats/\">product hub</a>, compare <a href=\"/products/cod-cheats/cod-store/#pricing\">plans</a>, and use <a href=\"/go/call-of-duty/\">checkout</a> after a private-range FOV test.</p>",
+    midCtaHtml: "<p>Map aim modules on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, compare <a href=\"/products/call-of-duty-cheats/modules/#pricing\">plans</a>, and use <a href=\"/go/call-of-duty/\">checkout</a> after a private-range FOV test.</p>",
     endCtaHtml: "<p>Need smoothing examples after a patch? Search <a href=\"/forum/\">forum</a> threads or file <a href=\"/support/\">support</a>; read <a href=\"/reviews/\">reviews</a> for loadout-specific FOV notes.</p>",  },
   'cod-cheats-free-vs-paid': {
     intro: "Free Call of Duty cheat downloads circulate in comment sections and throwaway hosts, but they rarely include loader hygiene, patch status, or a support path when supported PC titles updates break offsets. Paid access through our store bundles portal delivery, documented Windows 10 and 11 setup, and plan clarity—monthly $35 or lifetime $150—with short-term keys only when the store lists them. This comparison is for buyers weighing risk: free bundles optimize for clicks; paid bundles optimize for retest workflows and accountable updates. Even skeptical buyers benefit from comparing delivery mechanics side by side—free chaos versus paid retest rituals—before they attach any overlay to a main account.",
@@ -172,7 +172,7 @@ export const articlesBySlug: Record<string, {
         heading: "What free bundles usually omit",
         paragraphs: [
           "Unofficial archives often ship stale DLLs tuned for old Havoc seasons, bundled with unrelated miners or installers that trip Defender before the game launches. You get no status page when Multiplayer patches drop, and no ticket queue when integrity checks fail on Windows 11 24H2 builds.",
-          "Forum \"free\" threads rarely document which modes break—supported PC titles loot overlays, warfare radar, or breach ESP may be half-implemented. Paid listings on the <a href=\"/products/cod-cheats/\">product hub</a> state module scope so you know what you are funding before checkout.",
+          "Forum \"free\" threads rarely document which modes break—supported PC titles loot overlays, warfare radar, or breach ESP may be half-implemented. Paid listings on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> state module scope so you know what you are funding before checkout.",
           "Clipboard installers from free archives often drop startup entries unrelated to Call of Duty; paid portal files at least map to versioned changelog notes you can reference.",
           "Paid buyers still belong in vanilla unranked when banners warn yellow—saving hours on support is not the same as skipping retests.",
         ],
@@ -208,7 +208,7 @@ export const articlesBySlug: Record<string, {
         heading: "Cost math: monthly vs scraping free",
         paragraphs: [
           "Monthly $35 is predictable against entertainment hours; lifetime $150 suits multi-season grinders who accept patch waits. Chasing free builds costs GPU scans, alt accounts, and lost ranked nights when loaders fail mid-match.",
-          "See <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> alongside your hours. If you only play one weekend a month, monthly may beat hunting unstable free drops that never match your branch.",
+          "See <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> alongside your hours. If you only play one weekend a month, monthly may beat hunting unstable free drops that never match your branch.",
           "Community trust is not transferrable—reviews on this site tie to support outcomes, while anonymous repacks cannot be held accountable after deletes.",
         ],
       },
@@ -231,7 +231,7 @@ export const articlesBySlug: Record<string, {
       {
         heading: "Closing the gap with store checkout",
         paragraphs: [
-          "Free archives optimize for downloads; the store optimizes for repeatable retest rituals after supported PC titles patches. When you are ready to stop guessing checksums, compare module rows on <a href=\"/products/cod-cheats/\">the product hub</a>, read <a href=\"/products/cod-cheats/cod-store/#pricing\">monthly $35 and lifetime $150 pricing</a>, and pay through <a href=\"/go/call-of-duty/\">checkout</a> so portal delivery and <a href=\"/support/\">support</a> share your order ID.",
+          "Free archives optimize for downloads; the store optimizes for repeatable retest rituals after supported PC titles patches. When you are ready to stop guessing checksums, compare module rows on <a href=\"/products/call-of-duty-cheats/\">the product hub</a>, read <a href=\"/products/call-of-duty-cheats/modules/#pricing\">monthly $35 and lifetime $150 pricing</a>, and pay through <a href=\"/go/call-of-duty/\">checkout</a> so portal delivery and <a href=\"/support/\">support</a> share your order ID.",
           "That path does not promise undetected play—it gives you documented Windows 10 and 11 setup, banner-driven pauses, and ticket leverage when Multiplayer offsets move.",
           "If friends ask why you switched, cite delivery mechanics and status workflows rather than vague safety myths—honest comparisons keep your squad aligned on patch night instead of chasing deleted Mega folders at 2 a.m. before ranked Multiplayer.",
         ],
@@ -256,7 +256,7 @@ export const articlesBySlug: Record<string, {
       { q: "Why is portal download important?", a: "It ties files to your license and update channel; random mirrors bypass integrity and patch notifications." },
     ],
     midCtaTitle: "Skip mirrors—use the store",
-    midCtaHtml: "<p>Compare paid modules and <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> on the <a href=\"/products/cod-cheats/\">product hub</a>, then <a href=\"/go/call-of-duty/\">checkout</a> for portal delivery.</p>",
+    midCtaHtml: "<p>Compare paid modules and <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, then <a href=\"/go/call-of-duty/\">checkout</a> for portal delivery.</p>",
     endCtaHtml: "<p>Still weighing risk? Read <a href=\"/faq/\">FAQ</a>, <a href=\"/reviews/\">reviews</a>, and <a href=\"/support/\">support</a> policies before you replace free clutter with a maintained build.</p>",  },
   'cod-wallhack-guide': {
     intro: "Wallhack-style skeletons and classic player ESP boxes solve different problems in Call of Duty—one emphasizes pose through cover, the other emphasizes position and health at a glance. Most buyers need one primary vision layer for Multiplayer, then optional intel toggles for Multiplayer objectives or supported PC titles loot. This feature guide helps you pick before monthly $35 or lifetime $150 checkout on Windows PC, without promising that either module is invisible to review or anti-cheat systems. Vision modules compete for the same screen edges as objective timers and evac cues—plan HUD real estate before you enable every glow toggle in the loader.",
@@ -265,7 +265,7 @@ export const articlesBySlug: Record<string, {
         heading: "ESP boxes: where enemies sit on the battlefield",
         paragraphs: [
           "Player ESP draws boxes, distance tags, and health bars relative to cover on warfare lanes. Thin outlines keep desert ridges readable; thicker glow helps night Multiplayer if you cap draw distance. Teammate mute is essential so five friendly silhouettes do not mask one pushed angle on breach maps.",
-          "Tune ESP first using the settings walkthrough linked from <a href=\"/products/cod-cheats/\">product modules</a>. Most ranked issues are distance and thickness mistakes, not missing skeleton data.",
+          "Tune ESP first using the settings walkthrough linked from <a href=\"/products/call-of-duty-cheats/\">product modules</a>. Most ranked issues are distance and thickness mistakes, not missing skeleton data.",
           "Color-blind presets matter on sandy Havoc palettes where red boxes wash out; test alternate enemy colors in daytime customs before committing ranked.",
           "If kill cams show you aiming at geometry while skeletons promised a peek, step down wallhack before blaming netcode.",
         ],
@@ -302,7 +302,7 @@ export const articlesBySlug: Record<string, {
         heading: "Stacking both: when it helps and when it hurts",
         paragraphs: [
           "Dual vision makes sense only in short clutch profiles you hotkey—not all-match defaults. Ranked risk rises with visual noise because you react slower to legitimate trades even if data is richer.",
-          "Buy scope should list both ESP and wallhack-style options explicitly. Confirm on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>; enabling unlisted toggles via leaked configs is outside support coverage.",
+          "Buy scope should list both ESP and wallhack-style options explicitly. Confirm on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>; enabling unlisted toggles via leaked configs is outside support coverage.",
           "Thermal or NVG phases on night raids change skeleton contrast—save NV-specific slots instead of maxing brightness globally.",
         ],
       },
@@ -326,7 +326,7 @@ export const articlesBySlug: Record<string, {
         heading: "Revision season for vision stacks",
         paragraphs: [
           "Each supported PC titles season reshuffles foliage, interior props, and lighting—vision presets that looked clean in winter metas may bloom on summer maps. Schedule a vision-only custom once per season with teammates to vote on box versus skeleton priority before ranked.",
-          "Checkout should reflect that vote: buy the primary layer first on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a>, add secondary vision only if logs prove deaths came from pose—not position—data. <a href=\"/reviews/\">reviews</a> from breach mains often flip from skeleton-first to box-first after one season of honest VOD review.",
+          "Checkout should reflect that vote: buy the primary layer first on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a>, add secondary vision only if logs prove deaths came from pose—not position—data. <a href=\"/reviews/\">reviews</a> from breach mains often flip from skeleton-first to box-first after one season of honest VOD review.",
           "When extraction events add verticality, skeleton hotkeys may shrink to elevator rides only—document that cadence so you do not pay for unused wallhack scope on months you only play flat Havoc lanes.",
         ],
       },
@@ -348,7 +348,7 @@ export const articlesBySlug: Record<string, {
       { q: "Are chams the same as wallhack here?", a: "We group glow, skeleton, and chams-style visuals as wallhack family features when the store lists them." },
     ],
     midCtaTitle: "Pick one vision layer first",
-    midCtaHtml: "<p>See ESP versus wallhack scope on the <a href=\"/products/cod-cheats/\">product hub</a>, confirm <a href=\"/products/cod-cheats/cod-store/#pricing\">plan pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
+    midCtaHtml: "<p>See ESP versus wallhack scope on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, confirm <a href=\"/products/call-of-duty-cheats/modules/#pricing\">plan pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
     endCtaHtml: "<p>Layout questions? Visit <a href=\"/support/\">support</a> with HUD screenshots or browse <a href=\"/forum/\">forum</a> preset threads and <a href=\"/reviews/\">reviews</a>.</p>",  },
   'cod-esp-settings': {
     intro: "Player ESP in Call of Duty should stay readable on night Multiplayer, open Havoc ridges, and cluttered supported PC titles loot rooms without painting over your reticle. This settings guide covers box thickness, draw distance, teammate filters, and loot tag separation on Windows 10 and 11. Tune before you extend a monthly $35 plan or lifetime $150 license—status checks after patches still apply, and no overlay setting promises undetected play. Readable ESP is a competitive advantage only when it survives fatigue—late-night Ops sessions punish neon defaults that looked fine in a five-minute lobby test.",
@@ -357,7 +357,7 @@ export const articlesBySlug: Record<string, {
         heading: "Baseline box style and color discipline",
         paragraphs: [
           "Start with thin enemy boxes in a high-contrast color that survives both desert glare and sodium-lit interiors. Thick glow helps newcomers but obscures head-level crosshair placement on stair trades. Separate enemy and teammate palettes so mute rules are obvious at a glance.",
-          "Export a default slot after your first private match on the <a href=\"/products/cod-cheats/\">product hub</a> modules you purchased. Re-import only from trusted <a href=\"/forum/\">forum</a> posts with version tags matching your loader build.",
+          "Export a default slot after your first private match on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> modules you purchased. Re-import only from trusted <a href=\"/forum/\">forum</a> posts with version tags matching your loader build.",
           "Font scaling at 125% Windows display can shrink tag readability—verify ESP text size after any OS display change.",
           "Outline bloom during HDR displays can clip highlights—disable HDR for tuning night if tags wash out on OLED.",
         ],
@@ -402,7 +402,7 @@ export const articlesBySlug: Record<string, {
         heading: "Save presets before checkout renewals",
         paragraphs: [
           "Document warfare, operations, and raid slots with dates in the filename so patch seasons do not overwrite your only good night map. Monthly $35 renewals are easier to justify when configs port forward without re-tuning from scratch.",
-          "Compare <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> if ESP is your primary module, then <a href=\"/go/call-of-duty/\">checkout</a> when presets survive a post-patch private test.",
+          "Compare <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> if ESP is your primary module, then <a href=\"/go/call-of-duty/\">checkout</a> when presets survive a post-patch private test.",
           "Before renewals, export ESP JSON or cfg with date stamps so support can diff regressions after silent loader hotfixes.",
         ],
       },
@@ -441,16 +441,16 @@ export const articlesBySlug: Record<string, {
       { q: "Is ESP included in lifetime $150?", a: "If player ESP is on the product matrix for your branch, it is in lifetime scope with the same patch-day obligations." },
     ],
     midCtaTitle: "Dial ESP in before you renew",
-    midCtaHtml: "<p>Confirm player ESP on the <a href=\"/products/cod-cheats/\">product hub</a>, view <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a> after a private night map test.</p>",
+    midCtaHtml: "<p>Confirm player ESP on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, view <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a> after a private night map test.</p>",
     endCtaHtml: "<p>Filter bugs after patches? File <a href=\"/support/\">support</a> with config exports; compare <a href=\"/faq/\">FAQ</a> and <a href=\"/reviews/\">reviews</a>.</p>",  },
   'cod-no-recoil-guide': {
-    intro: "No-recoil or weapon control profiles in Call of Duty need per-gun tuning—Havoc assault rifles, CQB SMGs, DMR taps, and LMG suppressions all climb differently under sustained fire. Over-tuned macros spray past heads on single-fire modes in Multiplayer. This commercial guide explains how to build weapon sheets on Windows PC, when to disable control during supported PC titles long-range picks, and how monthly $35 or lifetime $150 plans relate to module scope—not to guaranteed safety or ban immunity. Attachments and barrel choices alter kick patterns each season—tie weapon sheet versions to patch numbers so you know when a profile expired without testing. Keep printed wall benchmarks beside your desk until hip and ADS strengths match on the rifles you queue in Havoc and Multiplayer. Checkout on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> only after wall groups look human at engagement ranges you actually hold in ranked.",
+    intro: "No-recoil or weapon control profiles in Call of Duty need per-gun tuning—Havoc assault rifles, CQB SMGs, DMR taps, and LMG suppressions all climb differently under sustained fire. Over-tuned macros spray past heads on single-fire modes in Multiplayer. This commercial guide explains how to build weapon sheets on Windows PC, when to disable control during supported PC titles long-range picks, and how monthly $35 or lifetime $150 plans relate to module scope—not to guaranteed safety or ban immunity. Attachments and barrel choices alter kick patterns each season—tie weapon sheet versions to patch numbers so you know when a profile expired without testing. Keep printed wall benchmarks beside your desk until hip and ADS strengths match on the rifles you queue in Havoc and Multiplayer. Checkout on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> only after wall groups look human at engagement ranges you actually hold in ranked.",
     sections: [
       {
         heading: "Assault rifles on open warfare lanes",
         paragraphs: [
           "Start near stock vertical pull on mid-range ARs used in Havoc, increasing strength in small steps while tracking a wall target at 30 and 60 meters. If horizontal jitter appears, fix sensitivity before you max the macro.",
-          "Pair control with conservative ESP from the <a href=\"/products/cod-cheats/\">product page</a> so you see tracers hitting chest height. Save AR profiles separate from SMG room-clear sheets.",
+          "Pair control with conservative ESP from the <a href=\"/products/call-of-duty-cheats/\">product page</a> so you see tracers hitting chest height. Save AR profiles separate from SMG room-clear sheets.",
           "Bipod or brace mechanics on LMGs should gate strength toggles automatically if your loader supports ADS state detection—otherwise manual hotkeys prevent drift.",
           "Spray transfers between targets need lower strength than single-target beams—some loaders offer target-switch dampening worth testing.",
         ],
@@ -496,7 +496,7 @@ export const articlesBySlug: Record<string, {
         heading: "Buying recoil modules with a plan",
         paragraphs: [
           "Confirm weapon control is listed for your branch before <a href=\"/go/call-of-duty/\">checkout</a>. Monthly $35 suits seasonal metas; lifetime $150 fits players who log every balance tweak across years.",
-          "See <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> and read <a href=\"/reviews/\">reviews</a> from rifle mains before stacking control with aggressive aim FOV.",
+          "See <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> and read <a href=\"/reviews/\">reviews</a> from rifle mains before stacking control with aggressive aim FOV.",
           "Align purchase timing with balance blogs—monthly $35 during a recoil-heavy metas patch month may beat blind lifetime upgrades.",
         ],
       },
@@ -538,7 +538,7 @@ export const articlesBySlug: Record<string, {
       { q: "Is weapon control in the $35 monthly plan?", a: "If listed on the product matrix for your game branch during the active period, yes." },
     ],
     midCtaTitle: "Build weapon sheets, then buy",
-    midCtaHtml: "<p>Verify weapon control modules on the <a href=\"/products/cod-cheats/\">product hub</a> and <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
+    midCtaHtml: "<p>Verify weapon control modules on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> and <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
     endCtaHtml: "<p>One gun class broken? <a href=\"/support/\">support</a> with sheet exports; read <a href=\"/faq/\">FAQ</a> and <a href=\"/reviews/\">reviews</a> for metas.</p>",  },
   'cod-cheats-setup': {
     intro: "First-night Call of Duty cheat setup on Windows 10 or 11 should be boring: read the delivery email, patch the OS, add Defender exclusions once, download from the portal, and verify loader status before ranked Havoc or Multiplayer queues. This checklist-style guide ties those steps to supported PC titles extraction tests and post-patch discipline. Paying monthly $35 or lifetime $150 does not skip hygiene— it gives you documented paths when something fails. Rushing setup because friends queued ranked is how misconfigured exclusions linger for weeks—block one calm hour even if the squad pings you twice. Treat first-night setup as license hygiene: the portal link in your receipt is the only download path that pairs with support on Windows. Friends who skip private matches to rush Havoc ranked usually open <a href=\"/support/\">support</a> tickets that cfg exports would have prevented the same evening. Save setup screenshots in the same folder as <a href=\"/faq/\">FAQ</a> bookmarks so Defender and portal steps are one click away on reinstall.",
@@ -547,7 +547,7 @@ export const articlesBySlug: Record<string, {
         heading: "Receipt email and portal download",
         paragraphs: [
           "Open the delivery message immediately after checkout and bookmark the portal host. Download only from that link, not reshared Discord attachments. If the link 404s, ticket <a href=\"/support/\">support</a> with payment ID instead of hunting mirrors.",
-          "Confirm the file version string matches the banner on the <a href=\"/products/cod-cheats/\">product hub</a> news strip when present.",
+          "Confirm the file version string matches the banner on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> news strip when present.",
           "Pin portal domain in browser favorites separately from game bookmarks—support links often differ from marketing landing pages.",
           "Sleep-disabled laptops that wake mid-download corrupt archives—finish portal pulls on wall power with lid open once.",
         ],
@@ -591,7 +591,7 @@ export const articlesBySlug: Record<string, {
       {
         heading: "When to open checkout for more modules",
         paragraphs: [
-          "After a successful private test, compare missing features against the product matrix. Upgrade plan length on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> only when configs are stable—monthly $35 first, lifetime $150 when you play daily across seasons.",
+          "After a successful private test, compare missing features against the product matrix. Upgrade plan length on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> only when configs are stable—monthly $35 first, lifetime $150 when you play daily across seasons.",
           "Use <a href=\"/go/call-of-duty/\">checkout</a> in the same browser profile that received the receipt to avoid license mismatch.",
           "After setup, read patch-day article habits even if nothing broke tonight—knowing pause order prevents panic on the first yellow banner.",
         ],
@@ -631,7 +631,7 @@ export const articlesBySlug: Record<string, {
       { q: "What if the banner is red?", a: "Do not inject for ranked play; wait for an updated build and retest privately." },
     ],
     midCtaTitle: "Finish setup, then extend your plan",
-    midCtaHtml: "<p>Missing modules after a clean setup? Review the <a href=\"/products/cod-cheats/\">product hub</a> and <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
+    midCtaHtml: "<p>Missing modules after a clean setup? Review the <a href=\"/products/call-of-duty-cheats/\">product hub</a> and <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a>, then <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
     endCtaHtml: "<p>Loader errors? <a href=\"/support/\">support</a> with screenshots; read <a href=\"/faq/\">FAQ</a> and <a href=\"/reviews/\">reviews</a> for Defender patterns.</p>",  },
   'cod-patch-day-status': {
     intro: "Patch day for Call of Duty means new supported PC titles balances, warfare map fixes, and anti-cheat maintenance that can pause cheat loaders until developers retest offsets. Smart buyers check portal status, close ranked queues, and run private ESP checks before re-enabling combat modules. Monthly $35 and lifetime $150 access still demands waiting—not because billing failed, but because running stale DLLs after updates increases risk without guaranteeing any outcome. Patch fear breeds forum rumors faster than engineers post banners—screenshot official status before debating ranked inject with strangers. Yellow banners are productivity tools—they tell you when private retests beat ranked ego on patch week across Call of Duty modes. Clan leaders who enforce vanilla scrims on patch night reduce peer pressure that otherwise ends in risky inject before portal clears post. Partial module success still demands ranked patience—reduce risk by disabling failing layers instead of hoping enemies notice less on Multiplayer stairs.",
@@ -640,7 +640,7 @@ export const articlesBySlug: Record<string, {
         heading: "What changes when the client updates",
         paragraphs: [
           "Season drops rewrite memory for weapons, entities, and UI layers across Havoc, Multiplayer, and extraction. Modules that drew boxes yesterday may misalign or crash today until the loader rebuilds.",
-          "Official patch notes on the game launcher rarely mention third-party tools—your signal is the portal banner and <a href=\"/products/cod-cheats/\">product hub</a> notices, not Reddit guesses.",
+          "Official patch notes on the game launcher rarely mention third-party tools—your signal is the portal banner and <a href=\"/products/call-of-duty-cheats/\">product hub</a> notices, not Reddit guesses.",
           "Game file verify through the launcher clears corrupted assets that mimic ESP misalignment even when offsets are fine.",
           "Network-level patches sometimes precede client version bumps—status may flip yellow before your launcher shows a new number.",
         ],
@@ -676,7 +676,7 @@ export const articlesBySlug: Record<string, {
         heading: "Checkout timing around patches",
         paragraphs: [
           "You can pay during downtime; access activates per license rules, but you should still wait for cleared builds before inject. New buyers sometimes purchase mid-patch—use setup guides instead of forcing day-one ranked.",
-          "Compare <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> when renewals hit patch weeks; extending monthly $35 before verifying status wastes grinding nights.",
+          "Compare <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> when renewals hit patch weeks; extending monthly $35 before verifying status wastes grinding nights.",
           "If you only play supported PC titles PvE, still test player ESP on players when PvP pockets rotate into maps during events.",
           "Lifetime buyers owe the same patience as monthly peers—billing tier does not accelerate engineering clocks.",
         ],
@@ -701,7 +701,7 @@ export const articlesBySlug: Record<string, {
         heading: "Narratives you can trust",
         paragraphs: [
           "Build a personal patch story from portal banners and private retests, not from loud all-clears in unrelated modes. When Havoc aligns but Multiplayer stairwells drift, log partial passes and wait—forcing dual-mode ranked on half offsets raises risk without guaranteeing outcomes.",
-          "After full clears, compare renewal timing with <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> and honest play hours. Paying monthly $35 during a quiet month beats extending licenses on vibes while banners flirt yellow.",
+          "After full clears, compare renewal timing with <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> and honest play hours. Paying monthly $35 during a quiet month beats extending licenses on vibes while banners flirt yellow.",
           "Clans that schedule vanilla scrims on patch night keep rosters patient; impatient stacks that inject early often scatter to other titles and miss the actual green window when it arrives hours later on your region CDN.",
         ],
       },
@@ -723,7 +723,7 @@ export const articlesBySlug: Record<string, {
       { q: "Can I request a refund during downtime?", a: "Refund rules live in FAQ; downtime alone may not qualify if updates are in progress." },
     ],
     midCtaTitle: "Cleared banner? Then grind",
-    midCtaHtml: "<p>After retests pass, confirm renewals on <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> or visit the <a href=\"/products/cod-cheats/\">product hub</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
+    midCtaHtml: "<p>After retests pass, confirm renewals on <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> or visit the <a href=\"/products/call-of-duty-cheats/\">product hub</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
     endCtaHtml: "<p>Banner stuck red? <a href=\"/support/\">support</a> with build numbers; check <a href=\"/faq/\">FAQ</a> and <a href=\"/forum/\">forum</a> status threads.</p>",  },
   'cod-stream-safe-obs': {
     intro: "Streaming Call of Duty with overlays demands a capture-safe OBS workflow—player boxes may hide from viewers while loot price tags leak faster on VOD review. This guide covers game capture sources, capture-friendly toggles when the loader lists them, and pre-live checklists for Havoc, Multiplayer, and supported PC titles sessions on Windows. Buying monthly $35 or lifetime $150 modules for public streams still requires conservative presets and status checks after patches—no setup guarantees invisibility on stream or in reports. Sponsors and VOD editors punish economy leaks harder than momentary aim clips—budget ten minutes for loot overlay audits every season. Stream revenue does not change patch obligations; capture-friendly toggles still need banner clears before live ranked with modules enabled. Creators comparing monthly $35 to lifetime $150 should include editor time spent auditing VODs for leaked loot tags—not just live OBS scenes. Schedule quarterly OBS plugin audits; background updater plugins have re-exposed HUD elements on otherwise clean Call of Duty captures. Practice vanilla co-stream segments on patch week so audiences still get scheduled content while modules stay paused responsibly.",
@@ -777,8 +777,8 @@ export const articlesBySlug: Record<string, {
       {
         heading: "Buying modules as a streamer",
         paragraphs: [
-          "Confirm stream-related toggles are listed on the <a href=\"/products/cod-cheats/\">product hub</a> before <a href=\"/go/call-of-duty/\">checkout</a>. Monthly $35 may fit seasonal stream arcs; lifetime $150 fits year-round creators who accept patch retests.",
-          "See <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> and keep vanilla ranked accounts for sponsor-friendly hours if needed.",
+          "Confirm stream-related toggles are listed on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> before <a href=\"/go/call-of-duty/\">checkout</a>. Monthly $35 may fit seasonal stream arcs; lifetime $150 fits year-round creators who accept patch retests.",
+          "See <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> and keep vanilla ranked accounts for sponsor-friendly hours if needed.",
           "If you monetize through this store lifetime at $150, treat stream safety as ongoing labor—not a one-time OBS toggle.",
         ],
       },
@@ -818,7 +818,7 @@ export const articlesBySlug: Record<string, {
       { q: "Are stream toggles in monthly $35?", a: "If listed on the product matrix during your active period, they are in scope." },
     ],
     midCtaTitle: "Stream presets deserve their own slot",
-    midCtaHtml: "<p>Confirm capture-friendly options on the <a href=\"/products/cod-cheats/\">product hub</a> and <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
+    midCtaHtml: "<p>Confirm capture-friendly options on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> and <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> before <a href=\"/go/call-of-duty/\">checkout</a>.</p>",
     endCtaHtml: "<p>OBS black screen? <a href=\"/support/\">support</a> with logs; read <a href=\"/faq/\">FAQ</a> and <a href=\"/reviews/\">reviews</a> from creators.</p>",  },
   'cod-patch-log': {
     intro: "A personal patch log turns chaotic supported PC titles season drops into repeatable retest notes—game build, loader version, modules enabled, errors, and pass/fail for Havoc lanes, Multiplayer breach maps, and extraction routes. Buyers on monthly $35 or lifetime $150 plans use logs to justify renewals with evidence instead of vibes. Logging reduces guesswork after updates; it does not promise safety or undetected play. Treat logs like flight records: boring to write, invaluable when a module regresses only on one map codename three weeks after a green banner. Spreadsheets beat memory when Engineers ask for timelines—buy renewals with rows, not feelings, after supported PC titles season shifts. Attach log excerpts to <a href=\"/forum/\">forum</a> posts only when build strings match, so peers do not follow your sheet during their yellow-banner week. Index logs by game mode prefix so Havoc regressions do not hide inside supported PC titles rows when you renew monthly $35 access.",
@@ -863,7 +863,7 @@ export const articlesBySlug: Record<string, {
         heading: "Renewal decisions with evidence",
         paragraphs: [
           "Before renewing monthly $35, scan last month logs: how many yellow-banner nights versus playable nights? Lifetime $150 makes sense when logs show consistent clears after disciplined waits.",
-          "Open <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> with log summary in hand, not frustration from one bad patch hour.",
+          "Open <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> with log summary in hand, not frustration from one bad patch hour.",
           "Anonymize teammate handles before sharing logs publicly—privacy matters even in competitive circles.",
           "supported PC titles event weekends deserve separate log tabs—limited-time modes expire faster than ranked metas.",
         ],
@@ -871,7 +871,7 @@ export const articlesBySlug: Record<string, {
       {
         heading: "Product scope reference",
         paragraphs: [
-          "Keep a printed or pinned module list from the <a href=\"/products/cod-cheats/\">product hub</a> beside your log template so you do not test toggles you never purchased.",
+          "Keep a printed or pinned module list from the <a href=\"/products/call-of-duty-cheats/\">product hub</a> beside your log template so you do not test toggles you never purchased.",
           "When clears post, <a href=\"/go/call-of-duty/\">checkout</a> if renewal aligns with documented stable weeks—not a single lucky ranked session.",
           "Backup logs quarterly; lifetime $150 buyers often exceed a year of seasons and lose early data on drive swaps.",
           "Forum posts without build strings clog triage—paste log snippets with redacted licenses only.",
@@ -917,7 +917,7 @@ export const articlesBySlug: Record<string, {
       { q: "Lifetime vs monthly with sparse logs?", a: "Sparse play may favor monthly until logs show enough hours to justify $150 lifetime." },
     ],
     midCtaTitle: "Log first, renew second",
-    midCtaHtml: "<p>Stable month on paper? See <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> on the <a href=\"/products/cod-cheats/\">product hub</a> and <a href=\"/go/call-of-duty/\">checkout</a> when ready.</p>",
+    midCtaHtml: "<p>Stable month on paper? See <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> and <a href=\"/go/call-of-duty/\">checkout</a> when ready.</p>",
     endCtaHtml: "<p>Regression after a clear banner? <a href=\"/support/\">support</a> with log excerpts; browse <a href=\"/faq/\">FAQ</a> and <a href=\"/forum/\">forum</a> patch threads.</p>",  },
   'cod-choose-plan': {
     intro: "Choosing between monthly and lifetime Call of Duty cheat plans is really a hours-played question across Havoc seasons, Multiplayer ranked stretches, and supported PC titles economy grinds. Our store shows monthly at $35 and lifetime at $150; short-term keys appear only when explicitly listed beside those rows. This plan picker ties playtime patterns to checkout timing on Windows PC—without claiming either plan prevents bans or removes patch-day waits. Honest hour tracking beats vibes: if your last thirty days include more patch downtime than ranked nights, monthly may still beat lifetime math. Hours-driven planning keeps $35 monthly cycles honest; lifetime $150 is a spreadsheet win, not a hype-button on checkout pages. Open <a href=\"/go/call-of-duty/\">checkout</a> after comparing module scope on the product hub with the modes you logged last month—not modes you wish you played. Short-term keys belong in forecasts only when the pricing grid lists them; otherwise model monthly $35 against real calendar blocks you can play. Track Havoc and Multiplayer hours in a notes app before clicking lifetime on the store pricing panel.",
@@ -935,7 +935,7 @@ export const articlesBySlug: Record<string, {
         heading: "Daily grinder: model lifetime",
         paragraphs: [
           "Players queuing Havoc nightly across multiple seasons should spreadsheet monthly renewals against $150 lifetime. Break-even often appears within several months of heavy use—math varies, discipline does not.",
-          "Lifetime still requires portal downloads after patches and private retests. Read <a href=\"/products/cod-cheats/cod-store/#pricing\">pricing</a> footnotes and <a href=\"/faq/\">FAQ</a> on what lifetime includes module-wise.",
+          "Lifetime still requires portal downloads after patches and private retests. Read <a href=\"/products/call-of-duty-cheats/modules/#pricing\">pricing</a> footnotes and <a href=\"/faq/\">FAQ</a> on what lifetime includes module-wise.",
           "Creators who stream two nights weekly may prefer monthly until sponsor contracts stabilize year-round.",
           "Family-shared PCs complicate license binding—read FAQ on seat limits before lifetime for a household.",
         ],
@@ -952,7 +952,7 @@ export const articlesBySlug: Record<string, {
       {
         heading: "Module scope versus plan length",
         paragraphs: [
-          "Plan length does not unlock extra modules—matrix on the <a href=\"/products/cod-cheats/\">product hub</a> defines scope for both monthly and lifetime. Do not pay lifetime hoping for secret toggles; verify labels before <a href=\"/go/call-of-duty/\">checkout</a>.",
+          "Plan length does not unlock extra modules—matrix on the <a href=\"/products/call-of-duty-cheats/\">product hub</a> defines scope for both monthly and lifetime. Do not pay lifetime hoping for secret toggles; verify labels before <a href=\"/go/call-of-duty/\">checkout</a>.",
           "Heavy ESP users who rarely touch aim may still pick monthly until vision presets stabilize across night maps.",
           "Gift purchases need recipient email alignment—support ties licenses to buyer receipts, not Discord handles.",
           "Auto-pay failures lock portal during good patch weeks—keep card expiry updated before Ops playoffs.",
@@ -987,7 +987,7 @@ export const articlesBySlug: Record<string, {
         heading: "Honest forecasts beat marketing FOMO",
         paragraphs: [
           "Write next season’s expected hours before comparing lifetime $150 to stacked monthly $35 bills. Include patch downtime honestly—idle license weeks happen on every plan.",
-          "When forecasts exceed break-even and module scope on <a href=\"/products/cod-cheats/\">the product hub</a> matches your Havoc, Multiplayer, and extraction mix, use <a href=\"/go/call-of-duty/\">checkout</a> with the same email you will use for portal download and <a href=\"/faq/\">FAQ</a> searches later.",
+          "When forecasts exceed break-even and module scope on <a href=\"/products/call-of-duty-cheats/\">the product hub</a> matches your Havoc, Multiplayer, and extraction mix, use <a href=\"/go/call-of-duty/\">checkout</a> with the same email you will use for portal download and <a href=\"/faq/\">FAQ</a> searches later.",
           "Households sharing one gaming PC should confirm seat policy before lifetime—two schedulers on one license confuse portal logins and renewal reminders tied to a single receipt.",
         ],
       },
@@ -1016,6 +1016,6 @@ export const articlesBySlug: Record<string, {
       { q: "Which plan for Multiplayer-only players?", a: "Hours matter more than mode—light schedules favor monthly until playtime proves lifetime math." },
     ],
     midCtaTitle: "Pick a plan that matches hours",
-    midCtaHtml: "<p>Compare <a href=\"/products/cod-cheats/cod-store/#pricing\">monthly and lifetime</a> on the <a href=\"/products/cod-cheats/\">product hub</a>, then <a href=\"/go/call-of-duty/\">checkout</a> when your hours forecast is honest.</p>",
+    midCtaHtml: "<p>Compare <a href=\"/products/call-of-duty-cheats/modules/#pricing\">monthly and lifetime</a> on the <a href=\"/products/call-of-duty-cheats/\">product hub</a>, then <a href=\"/go/call-of-duty/\">checkout</a> when your hours forecast is honest.</p>",
     endCtaHtml: "<p>Billing questions? <a href=\"/support/\">support</a> with receipts; read <a href=\"/faq/\">FAQ</a> and <a href=\"/reviews/\">reviews</a> before upgrading plan length.</p>",  },
 };
