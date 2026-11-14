@@ -9,11 +9,11 @@ export const WRONG_DOMAIN_VARIANTS = [
   'cs2cheats.org',
   'COD Cheats-cheats.com',
   'COD Cheats-cheats.net',
-  'cod-cheats.net',
-  'www.cod-cheats.net',
   'COD Cheats-cheat.org',
   'delta-force-cheats.org',
-  'www.cod-cheats.net',
+  'deltaforce-cheats.org',
+  'cod-che-ts.net',
+  'www.cod-che-ts.net',
 ];
 
 /**

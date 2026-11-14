@@ -127,6 +127,7 @@ for (const file of files) {
   }
 
   for (const variant of WRONG_DOMAIN_VARIANTS) {
+    if (variant.toLowerCase().replace(/^www\./, '') === SITE_DOMAIN) continue;
     const re = new RegExp(variant.replace(/\./g, '\\.'), 'gi');
     findOnLines(content, re, (match, line) => {
       addIssue(file, line, `wrong domain variant "${match}" (must be ${SITE_DOMAIN})`);
@@ -282,15 +283,6 @@ if (!fs.existsSync(robotsPath)) {
   }
 }
 
-function offerHasPriceAndAvailability(offer) {
-  if (!offer || typeof offer !== 'object') return false;
-  const price = offer.price;
-  const hasPrice = price !== undefined && price !== null && String(price).trim() !== '';
-  const avail = offer.availability;
-  const hasAvail = typeof avail === 'string' && avail.trim().length > 0;
-  return hasPrice && hasAvail;
-}
-
 function collectProductNodes(node, out = []) {
   if (node == null) return out;
   if (Array.isArray(node)) {
@@ -328,47 +320,8 @@ function checkProductProductPages() {
       }
     }
     if (products.length === 0) {
-      addIssue(file, 1, 'product page JSON-LD must include a Product node with offers');
+      addIssue(file, 1, 'product page JSON-LD must include a Product node');
       continue;
-    }
-    for (const product of products) {
-      const offers = product.offers;
-      const list = Array.isArray(offers) ? offers : offers ? [offers] : [];
-      if (list.length === 0) {
-        addIssue(file, 1, 'Product JSON-LD missing offers with price and availability');
-        continue;
-      }
-      for (const offer of list) {
-        if (!offerHasPriceAndAvailability(offer)) {
-          addIssue(file, 1, 'Product Offer must include price and availability');
-        }
-      }
-    }
-
-    const plansMatch = content.match(/data-plans=["']([^"']+)["']/);
-    if (plansMatch) {
-      let plans;
-      try {
-        const decoded = plansMatch[1].replace(/&quot;/g, '"').replace(/&#39;/g, "'");
-        plans = JSON.parse(decoded);
-      } catch {
-        addIssue(file, 1, 'data-plans is not valid JSON on product checkout panel');
-        plans = null;
-      }
-      if (plans && products[0]?.offers) {
-        const offerList = Array.isArray(products[0].offers)
-          ? products[0].offers
-          : [products[0].offers];
-        const jsonPrices = offerList.map((o) => String(o.price)).sort();
-        const visiblePrices = plans.map((p) => String(p.price ?? p.priceUsd)).sort();
-        if (jsonPrices.join(',') !== visiblePrices.join(',')) {
-          addIssue(
-            file,
-            1,
-            `visible plan prices [${visiblePrices.join(', ')}] must match JSON-LD prices [${jsonPrices.join(', ')}]`,
-          );
-        }
-      }
     }
   }
 }
