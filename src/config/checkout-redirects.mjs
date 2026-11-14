@@ -1,8 +1,10 @@
-/** Single store destination — buy buttons use internal /go/ paths only. */
-const STORE_URL = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty';
+import { affiliateLinks } from './affiliate-links.mjs';
 
+/** Internal /go/ paths map to mandatory merchant destinations. */
 export const CHECKOUT_URLS = {
-  'call-of-duty': STORE_URL,
+  'call-of-duty': affiliateLinks.callOfDuty,
+  'cloud-dma': affiliateLinks.cloudDMA,
+  'hwid-spoofer': affiliateLinks.hwidSpoofer,
 };
 
 export const CHECKOUT_PATH_REDIRECTS = new Map([
@@ -10,6 +12,10 @@ export const CHECKOUT_PATH_REDIRECTS = new Map([
   ['/go/call-of-duty/', CHECKOUT_URLS['call-of-duty']],
   ['/go/store', CHECKOUT_URLS['call-of-duty']],
   ['/go/store/', CHECKOUT_URLS['call-of-duty']],
+  ['/go/cloud-dma', CHECKOUT_URLS['cloud-dma']],
+  ['/go/cloud-dma/', CHECKOUT_URLS['cloud-dma']],
+  ['/go/hwid-spoofer', CHECKOUT_URLS['hwid-spoofer']],
+  ['/go/hwid-spoofer/', CHECKOUT_URLS['hwid-spoofer']],
 ]);
 
 export const LEGACY_PRODUCT_REDIRECTS = new Map([

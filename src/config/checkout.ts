@@ -6,6 +6,8 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
   'call-of-duty': 'call-of-duty',
+  'cloud-dma': 'cloud-dma',
+  'hwid-spoofer': 'hwid-spoofer',
 };
 
 export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
@@ -18,7 +20,9 @@ export function checkoutPath(product: CheckoutProduct = 'call-of-duty'): string 
 
 export const PRIMARY_CHECKOUT_PATH = checkoutPath('call-of-duty');
 
-export function checkoutForSlug(_slug: string): string {
+export function checkoutForSlug(slug: string): string {
+  if (slug === 'cloud-dma') return checkoutPath('cloud-dma');
+  if (slug === 'hwid-spoofer') return checkoutPath('hwid-spoofer');
   return checkoutPath('call-of-duty');
 }
 

@@ -15,6 +15,57 @@
   background: color-mix(in oklch, var(--card) 92%, transparent);
 }
 
+.reviews-summary--rich {
+  display: grid;
+  gap: 1.25rem;
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--primary) 12%, var(--card)) 0%, color-mix(in oklch, var(--card) 96%, transparent) 55%),
+    color-mix(in oklch, var(--card) 92%, transparent);
+  border-color: color-mix(in oklch, var(--primary) 28%, var(--border));
+}
+
+@media (min-width: 640px) {
+  .reviews-summary--rich {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+
+  .reviews-summary--rich .reviews-summary__count {
+    grid-column: 1 / -1;
+  }
+}
+
+.reviews-histogram {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.reviews-histogram__row {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted-foreground);
+}
+
+.reviews-histogram__track {
+  display: block;
+  height: 0.4rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--muted) 65%, transparent);
+}
+
+.reviews-histogram__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, color-mix(in oklch, var(--primary) 85%, white), var(--primary));
+}
+
 .reviews-summary__score {
   display: flex;
   flex-wrap: wrap;
@@ -100,9 +151,25 @@
 
 .reviews-card {
   border: 1px solid var(--border);
+  border-left: 3px solid color-mix(in oklch, var(--primary) 65%, transparent);
   border-radius: var(--radius-xl);
   padding: 1.1rem 1.2rem 1.15rem;
   background: color-mix(in oklch, var(--card) 94%, transparent);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.reviews-card:hover {
+  border-left-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.reviews-card__tag {
+  margin: 0.65rem 0 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
 }
 
 .reviews-card__head {

@@ -31,7 +31,7 @@ const reviewBodies = [
   'Visible check stopped snaps through smoke. Loader auto-update after the last Call of Duty patch was smooth.',
   'Appeal templates organized my receipts. No guaranteed unban, but the timeline export helped my store ticket.',
   'Lifetime key arrived in under two minutes. Modules match the product page list—no surprise paywalls.',
-  'Night raid ESP contrast preset from articles actually works. Teammate mute saved readability.',
+  'Night raid ESP contrast preset from the ESP guide actually works. Teammate mute saved readability.',
   'HWID utility in stock when I checked—badge here matched the store.',
   'Trigger delay at 60ms made duel peeks feel human. Still testing extraction esp on longer raids.',
   'Forum thread on FOV led me here. Reviews looked real so I tried monthly first.',

@@ -88,21 +88,29 @@ const first = images[0];
       if (root.hasAttribute('data-gallery-bound')) return;
       root.setAttribute('data-gallery-bound', '');
 
+      const picture = root.querySelector<HTMLPictureElement>('.product-gallery__main picture');
       const main =
-        root.querySelector<HTMLImageElement>('.product-gallery__main img.product-gallery__image') ??
+        picture?.querySelector<HTMLImageElement>('img.product-gallery__image') ??
+        picture?.querySelector<HTMLImageElement>('img') ??
         root.querySelector<HTMLImageElement>('.product-gallery__main img');
+      const source = picture?.querySelector<HTMLSourceElement>('source[type="image/webp"]');
       const thumbs = root.querySelectorAll<HTMLButtonElement>('[data-product-gallery-thumb]');
       if (!main || !thumbs.length) return;
+
+      const applyMain = (baseSrc: string, alt: string | null) => {
+        const webp = defaultWebpSrc(baseSrc, MAIN_WIDTHS);
+        const srcSet = responsiveSrcSet(baseSrc, MAIN_WIDTHS);
+        main.src = webp;
+        main.srcset = srcSet;
+        if (source) source.srcset = srcSet;
+        if (alt) main.alt = alt;
+      };
 
       thumbs.forEach((thumb) => {
         thumb.addEventListener('click', () => {
           const alt = thumb.getAttribute('data-alt');
           const baseSrc = thumb.getAttribute('data-src');
-          if (baseSrc) {
-            main.src = defaultWebpSrc(baseSrc, MAIN_WIDTHS);
-            main.srcset = responsiveSrcSet(baseSrc, MAIN_WIDTHS);
-          }
-          if (alt) main.alt = alt;
+          if (baseSrc) applyMain(baseSrc, alt);
           thumbs.forEach((t) => {
             const active = t === thumb;
             t.classList.toggle('is-active', active);

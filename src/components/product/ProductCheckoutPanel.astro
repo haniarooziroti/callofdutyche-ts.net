@@ -2,7 +2,7 @@
 import type { ProductPage } from '../../data/products';
 import { checkoutForSlug } from '../../config/checkout';
 import { AFFILIATE_REL } from '../../config/affiliate';
-import AffiliateDisclosure from '../AffiliateDisclosure.astro';
+import BuyNowButton from '../BuyNowButton.astro';
 import { productPath } from '../../utils/path';
 import Icon from '../icons/Icon.astro';
 import ProductIconWell from './ProductIconWell.astro';
@@ -53,19 +53,14 @@ const cloudCheckout = checkoutForSlug('cloud-dma');
         Plan options are shown on the store after you continue.
       </p>
 
-      <Button
-        as="a"
+      <BuyNowButton
         href={checkoutHref}
         rel={AFFILIATE_REL}
-        variant="primary"
+        label="Proceed to Checkout"
         size="lg"
-        class="w-full max-w-full rounded-xl text-center whitespace-normal"
+        class="w-full"
         data-checkout-buy
-      >
-        Proceed to Checkout
-        <Icon name="arrowRight" size={17} />
-      </Button>
-      <AffiliateDisclosure />
+      />
 
       {
         showDmaSpooferRow && (

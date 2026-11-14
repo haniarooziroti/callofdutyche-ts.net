@@ -22,8 +22,8 @@ if (!en.includes('REVIEW_SUMMARY')) {
 
 const siteBlock = `  site: {
     name: 'Call of Duty cheats',
-    domain: 'cod-cheats.net',
-    title: '[COD Cheats] Esp, Aimbot & Wallhack | cod-cheats.net',
+    domain: 'cod-cheat.net',
+    title: '[COD Cheats] Esp, Aimbot & Wallhack | cod-cheat.net',
     description:
       'Call of Duty cheats for PC bring ESP, aimbot, and wallhack-style intel to large-scale fights. Compare modules here, then open checkout for keys when you are ready.',
     brandMarkAlt: 'Call of Duty cheats site mark',
@@ -64,7 +64,7 @@ en = en.replace(
   `${siteBlock}\n  features:`,
 );
 
-en = en.replaceAll('cs2-cheats.org', 'cod-cheats.net');
+en = en.replaceAll('cs2-cheats.org', 'cod-cheat.net');
 en = en.replaceAll('CS2 ', 'Call of Duty ');
 en = en.replaceAll('CS2', 'Call of Duty');
 en = en.replaceAll('Counter-Strike 2', 'Call of Duty');

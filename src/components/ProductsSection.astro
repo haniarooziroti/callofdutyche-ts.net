@@ -4,8 +4,6 @@ import { t } from '../i18n';
 import { getCatalogCards } from '../data/catalog';
 import SectionHeader from './SectionHeader.astro';
 import CatalogCard from './CatalogCard.astro';
-import AffiliateDisclosure from './AffiliateDisclosure.astro';
-
 const s = t.products;
 const catalogProducts = getCatalogCards();
 ---
@@ -13,8 +11,6 @@ const catalogProducts = getCatalogCards();
 <section id="products" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
-    <AffiliateDisclosure class="mt-4 max-w-2xl" />
-
     <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
       {
         catalogProducts.map((product) => {

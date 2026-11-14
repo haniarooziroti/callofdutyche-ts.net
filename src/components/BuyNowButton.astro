@@ -1,0 +1,39 @@
+---
+import Icon from './icons/Icon.astro';
+
+interface Props {
+  href: string;
+  label?: string;
+  class?: string;
+  rel?: string;
+  'aria-label'?: string;
+  'data-plan'?: string;
+  'data-checkout-buy'?: boolean;
+  size?: 'md' | 'lg';
+}
+
+const {
+  href,
+  label = 'Buy now',
+  class: className,
+  rel,
+  'aria-label': ariaLabel,
+  'data-plan': dataPlan,
+  'data-checkout-buy': dataCheckoutBuy,
+  size = 'md',
+} = Astro.props;
+---
+
+<a
+  href={href}
+  rel={rel}
+  aria-label={ariaLabel ?? label}
+  class:list={['buy-now-cta', size === 'lg' && 'buy-now-cta--lg', className]}
+  data-plan={dataPlan}
+  {...(dataCheckoutBuy ? { 'data-checkout-buy': '' } : {})}
+>
+  <span class="buy-now-cta__label">{label}</span>
+  <span class="buy-now-cta__rail" aria-hidden="true">
+    <Icon name="arrowRight" size={size === 'lg' ? 20 : 18} />
+  </span>
+</a>

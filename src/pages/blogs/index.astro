@@ -45,7 +45,7 @@ const productHref = `${PRODUCT_BASE}modules/`;
       <Breadcrumbs items={breadcrumbs} />
       <header class="mt-6 max-w-3xl space-y-3">
         <p class="text-xs font-semibold uppercase tracking-wider text-primary">Blogs</p>
-        <h1 class="text-3xl font-bold normal-case md:text-4xl">Blogs and Guides</h1>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">Call of Duty Guides &amp; Blogs</h1>
         <p class="text-lg text-muted-foreground">
           Practical guides for Call of Duty aimbot, player ESP, wallhack, no recoil, setup and patch-day status on Windows.
           Read the guides, then compare modules on the <a href={PRODUCT_BASE} class="text-primary underline-offset-4 hover:underline">product page</a>.
@@ -115,7 +115,7 @@ const productHref = `${PRODUCT_BASE}modules/`;
             <Icon name="arrowRight" size={16} />
           </Button>
           <Button as="a" href={productHref} variant="outline">
-            See pricing
+            Product features
             <Icon name="arrowRight" size={16} />
           </Button>
           <Button as="a" href="/forum/" variant="outline">
@@ -177,7 +177,18 @@ const productHref = `${PRODUCT_BASE}modules/`;
         updateBlogs();
       }),
     );
-    search?.addEventListener('input', updateBlogs);
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get('q');
+    if (qParam && search) search.value = qParam;
+
+    search?.addEventListener('input', () => {
+      const q = search.value.trim();
+      const next = new URL(window.location.href);
+      if (q) next.searchParams.set('q', q);
+      else next.searchParams.delete('q');
+      window.history.replaceState({}, '', next);
+      updateBlogs();
+    });
     sort?.addEventListener('change', updateBlogs);
     updateBlogs();
   </script>

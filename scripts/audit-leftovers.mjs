@@ -58,11 +58,17 @@ for (const dir of SCAN_DIRS) {
   }
 }
 
-const checkout = fs.readFileSync(path.join(root, 'src/config/checkout-redirects.mjs'), 'utf8');
-const expected = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty';
-if (!checkout.includes(expected)) {
-  console.error('CHECKOUT URL mismatch');
-  failures++;
+const affiliate = fs.readFileSync(path.join(root, 'src/config/affiliate-links.mjs'), 'utf8');
+const expectedAffiliate = [
+  'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcall-of-duty',
+  'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcloud-dma',
+  'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fhwid-spoofer',
+];
+for (const url of expectedAffiliate) {
+  if (!affiliate.includes(url)) {
+    console.error(`AFFILIATE URL missing: ${url}`);
+    failures++;
+  }
 }
 
 if (failures) {

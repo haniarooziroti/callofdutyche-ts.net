@@ -5,14 +5,12 @@ interface Env {
   GA_MEASUREMENT_ID?: string;
 }
 
-const ALIAS_HOSTS = new Set([
-  'www.cod-cheats.net',
-  'cod-cheats.net',
-  'www.cod-cheats.net',
-]);
+const PRODUCTION_HOST = 'cod-cheat.net';
+
+const LEGACY_ALIAS_HOSTS = new Set(['www.cod-cheat.net', 'cod-cheat.net', 'www.cod-cheat.net']);
 
 function withRobots(response: Response, hostname: string): Response {
-  if (!hostname.endsWith('.workers.dev')) return response;
+  if (!hostname.endsWith('.workers.dev') && !hostname.endsWith('.pages.dev')) return response;
   const headers = new Headers(response.headers);
   if (!headers.has('X-Robots-Tag')) headers.set('X-Robots-Tag', 'noindex, nofollow');
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
@@ -23,8 +21,8 @@ export default {
     const url = new URL(request.url);
     const host = url.hostname;
 
-    if (!host.endsWith('.workers.dev') && host !== 'cod-cheats.net' && ALIAS_HOSTS.has(host)) {
-      const target = `${CANONICAL_ORIGIN}${url.pathname}`;
+    if (host !== PRODUCTION_HOST && LEGACY_ALIAS_HOSTS.has(host)) {
+      const target = `${CANONICAL_ORIGIN}${url.pathname}${url.search}`;
       return withRobots(Response.redirect(target, 301), host);
     }
 

@@ -2,6 +2,7 @@
 import { t } from '../i18n';
 import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { AFFILIATE_REL } from '../config/affiliate';
+import BuyNowButton from './BuyNowButton.astro';
 import { Button } from '@/components/starwind/button';
 import AnimatedThemeSwitch from './AnimatedThemeSwitch.astro';
 import {
@@ -52,19 +53,14 @@ const navIcons: Record<string, IconName> = {
     </nav>
 
     <div class="flex items-center gap-2">
-      <Button
-        as="a"
+      <BuyNowButton
         href={PRIMARY_CHECKOUT_PATH}
         rel={AFFILIATE_REL}
         data-plan="call-of-duty"
-        variant="outline"
-        size="md"
-        class="hidden shrink-0 rounded-xl text-sm lg:inline-flex"
+        label={t.ui.navTryNow}
+        class="hidden shrink-0 lg:inline-flex"
         aria-label={t.ui.navTryNowAria}
-      >
-        {t.ui.navTryNow}
-        <Icon name="arrowRight" size={17} />
-      </Button>
+      />
       <div class="hidden items-center sm:flex">
         <AnimatedThemeSwitch size="md" ariaLabel={t.ui.themeLight} class="inline-flex" />
       </div>
@@ -95,19 +91,14 @@ const navIcons: Record<string, IconName> = {
                 {link.label}
               </a>
             ))}
-            <Button
-              as="a"
+            <BuyNowButton
               href={PRIMARY_CHECKOUT_PATH}
               rel={AFFILIATE_REL}
               data-plan="call-of-duty"
-              variant="outline"
-              size="md"
-              class="mt-1 w-full justify-center rounded-xl"
+              label={t.ui.navTryNow}
+              class="mt-1 w-full justify-center"
               aria-label={t.ui.navTryNowAria}
-            >
-              {t.ui.navTryNow}
-              <Icon name="arrowRight" size={17} />
-            </Button>
+            />
           </nav>
           <div class="flex justify-center pt-1">
             <AnimatedThemeSwitch size="sm" ariaLabel={t.ui.themeLight} />
