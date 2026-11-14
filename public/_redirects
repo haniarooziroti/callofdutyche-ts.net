@@ -17,6 +17,12 @@
 /forum/cod-merchant-checkout-plans/ /forum/cod-checkout-plans/ 301
 /blogs/cod-esp-guide/ /blogs/cod-esp-settings/ 301
 /blogs/cod-esp-guide/* /blogs/cod-esp-settings/:splat 301
+/blogs/cod-aimbot-guide/ /blogs/cod-aimbot-fov/ 301
+/blogs/cod-aimbot-guide/* /blogs/cod-aimbot-fov/:splat 301
+/blogs/cod-compatibility/ /blogs/buy-cod-cheats/ 301
+/blogs/cod-compatibility/* /blogs/buy-cod-cheats/:splat 301
+/blogs/cod-cheats-faq/ /blogs/cod-choose-plan/ 301
+/blogs/cod-cheats-faq/* /blogs/cod-choose-plan/:splat 301
 /products/call-of-duty-cheats/ugc/ /products/call-of-duty-cheats/appeals/ 301
 /products/call-of-duty-cheats/ugc/* /products/call-of-duty-cheats/appeals/:splat 301
 /products/dota-2-cheats /products/call-of-duty-cheats/ 301

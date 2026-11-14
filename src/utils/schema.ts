@@ -35,9 +35,15 @@ export function websiteSchema() {
 }
 
 export function organizationSchema() {
-  const envSameAs = getOrganizationSameAs();
+  const envSameAs = getOrganizationSameAs().filter((url) => {
+    try {
+      return new URL(url).hostname !== new URL(SITE_ORIGIN).hostname;
+    } catch {
+      return false;
+    }
+  });
   const discordFallback = envSameAs.length === 0 && DISCORD_URL ? [DISCORD_URL] : [];
-  const sameAs = [...new Set([...envSameAs, ...discordFallback, canonicalUrl('/forum/')])];
+  const sameAs = [...new Set([...envSameAs, ...discordFallback])];
 
   return {
     '@context': 'https://schema.org',
@@ -258,7 +264,7 @@ export function discussionForumPostingSchema(input: {
     commentCount: input.comments,
     isPartOf: {
       '@type': 'CollectionPage',
-      name: 'Call of Duty cheats forum',
+      name: 'COD CHEAT forum',
       url: canonicalUrl('/forum/'),
     },
   };

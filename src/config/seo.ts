@@ -56,36 +56,23 @@ export function absoluteAssetUrl(path: string): string {
   return `${SITE_ORIGIN}${normalized}`;
 }
 
-const TITLE_MIN = 50;
-const TITLE_MAX = 60;
-const DESC_MIN = 120;
-const DESC_MAX = 155;
-
+/** Hub and static routes — titles/descriptions are authored in pageSeo (see scripts/seo-check.mjs). */
 export function resolvePageSeo(pathname: string): PageSeoEntry {
   const entry = getPageSeoEntry(pathname);
-  const base = entry ?? { title: t.site.title, description: t.site.description };
-  const title =
-    base.title.length >= TITLE_MIN && base.title.length <= TITLE_MAX
-      ? base.title
-      : pageTitle(base.title.split('|')[0]?.trim() || base.title);
-  return {
-    title,
-    description: ensureMetaDescription(base.description),
-  };
+  if (entry) return entry;
+  return { title: t.site.title, description: t.site.description };
 }
+
+const TITLE_MAX = 60;
 
 /** Brand suffix for `<title>` when building from a keyword phrase. */
 export function titleBrandSuffix(): string {
   return ` | ${t.site.domain}`;
 }
 
-function withTitleSuffix(head: string, suffix: string): string {
-  return `${head}${suffix}`;
-}
-
 function trimTitleHead(head: string, suffix: string): string {
   let h = head.replace(/\s+/g, ' ').trim();
-  while (h.length > 0 && withTitleSuffix(h, suffix).length > TITLE_MAX) {
+  while (h.length > 0 && `${h}${suffix}`.length > TITLE_MAX) {
     const shorter = h.replace(/\s+[—–-]?\s*\S+$/, '').trim();
     if (!shorter || shorter === h) h = h.slice(0, -1).trim();
     else h = shorter;
@@ -95,44 +82,17 @@ function trimTitleHead(head: string, suffix: string): string {
   return h;
 }
 
-/** Article / thread titles: complete 50–60 character phrase. Never cut mid-sentence. */
+/** Forum thread titles: keyword plus domain only — no auto-padded filler (seo-check warns if short). */
 export function pageTitle(keyword: string, suffixSite = t.site.domain): string {
   const suffix = ` | ${suffixSite}`;
   const k = keyword.replace(/\s+/g, ' ').trim();
-
-  const branded = withTitleSuffix(k, suffix);
-  if (branded.length >= TITLE_MIN && branded.length <= TITLE_MAX) return branded;
-
-  if (branded.length > TITLE_MAX) {
-    const head = trimTitleHead(k, suffix);
-    const out = withTitleSuffix(head, suffix);
-    if (out.length >= TITLE_MIN && out.length <= TITLE_MAX) return out;
-  }
-
-  if (k.length >= TITLE_MIN && k.length <= TITLE_MAX) return k;
-
-  const shortTitlePads = [
-    withTitleSuffix(`${k} — COD cheat`, suffix),
-    withTitleSuffix(`${k} — COD cheat forum`, suffix),
-    withTitleSuffix(`Call of Duty: ${k}`, suffix),
-  ];
-  for (const candidate of shortTitlePads) {
-    if (candidate.length >= TITLE_MIN && candidate.length <= TITLE_MAX) return candidate;
-    if (candidate.length > TITLE_MAX) {
-      const head = trimTitleHead(candidate.slice(0, -suffix.length), suffix);
-      const trimmed = withTitleSuffix(head, suffix);
-      if (trimmed.length >= TITLE_MIN && trimmed.length <= TITLE_MAX) return trimmed;
-    }
-  }
-
-  const head = trimTitleHead(k || 'Call of Duty cheat forum', suffix);
-  const out = withTitleSuffix(head, suffix);
-  if (out.length >= TITLE_MIN) return out.slice(0, TITLE_MAX);
-
-  return shortTitlePads[0].slice(0, TITLE_MAX);
+  const branded = `${k}${suffix}`;
+  if (branded.length <= TITLE_MAX) return branded;
+  const head = trimTitleHead(k, suffix);
+  return `${head}${suffix}`;
 }
 
-/** Product detail `<title>` — 50–60 chars with main cheat page vs utility phrasing. */
+/** Product detail `<title>` — authored strings per slug. */
 export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | 'slug'>): string {
   if (product.slug === 'modules') {
     return 'Call of Duty Cheat Modules for ESP, Aimbot and Loot';
@@ -150,29 +110,23 @@ export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | '
   return phrase.length >= 50 && phrase.length <= 60 ? phrase : phrase.slice(0, 60);
 }
 
-/** Forum thread meta — keep descriptions direct for SERP snippets. */
-export function cheatMetaDescription(text: string): string {
-  return ensureMetaDescription(text, 'Call of Duty cheat forum thread');
+const DESC_MAX = 155;
+
+/** Truncate only — no boilerplate padding (seo-check warns if out of range). */
+export function metaDescription(text: string): string {
+  const body = text.trim().replace(/\s+/g, ' ');
+  if (body.length <= DESC_MAX) return body;
+  return `${body.slice(0, DESC_MAX - 1).replace(/\s+\S*$/, '').trim()}…`;
 }
 
-/** Normalize meta descriptions to 120–155 characters for built pages. */
-export function ensureMetaDescription(text: string, prefix = ''): string {
-  let body = text.trim().replace(/\s+/g, ' ');
-  if (prefix && !/^Call of Duty/i.test(body)) body = `${prefix}: ${body}`;
-  else if (!/^Call of Duty/i.test(body)) body = `Call of Duty cheat guides: ${body}`;
+/** @deprecated Use metaDescription */
+export function cheatMetaDescription(text: string): string {
+  return metaDescription(text);
+}
 
-  const padTail =
-    ' Read ESP, aimbot, and loader notes on cod-cheat.net before checkout.';
-  if (body.length < DESC_MIN) body = `${body}${padTail}`;
-  if (body.length < DESC_MIN) {
-    body = `${body} Compare modules, plans, and PC compatibility on the catalog.`;
-  }
-
-  while (body.length > DESC_MAX) {
-    body = `${body.slice(0, DESC_MAX - 1).replace(/\s+\S*$/, '').trim()}…`;
-  }
-
-  return body;
+/** @deprecated Use metaDescription */
+export function ensureMetaDescription(text: string, _prefix = ''): string {
+  return metaDescription(text);
 }
 
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;

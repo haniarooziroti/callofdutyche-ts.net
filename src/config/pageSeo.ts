@@ -1,7 +1,7 @@
 /** * Central titles/descriptions for high-traffic routes. * Titles: 50–60 chars; descriptions: 120–155 chars (see scripts/seo-check.mjs). */ export interface PageSeoEntry { title: string; description: string; } const hub = '/products/call-of-duty-cheats/'; export const PAGE_SEO: Record<string, PageSeoEntry> = { '/': {
-    title: 'COD Cheat for PC | ESP, Aimbot & Module Hub',
+    title: 'Call of Duty cheat for PC | ESP, Aimbot & Modules',
     description:
-      'Explore Call of Duty cheat for PC, compare ESP and aimbot features, review compatibility, and open product details before checkout on cod-cheat.net.',
+      'Call of Duty cheat for PC with ESP, aimbot, wallhack, and loot intel on COD CHEAT—compare modules, read guides, and open checkout when you are ready to buy.',
   }, [hub]: { title: 'Call of Duty Cheat Catalog | Features & Compatibility', description: 'Browse Call of Duty cheat modules for PC: ESP, aimbot, utilities, and compatibility notes. Compare features here, then open checkout for plans.', }, [`${hub}modules/`]: {
     title: 'Call of Duty Cheat Modules for ESP, Aimbot and Loot',
     description:
@@ -26,7 +26,11 @@
     title: 'COD Cheat Reviews & Buyer Ratings Hub | PC',
     description:
       'Buyer reviews for Call of Duty cheat: ESP, aimbot, loader setup, and support. Sort by date or rating on cod-cheat.net before checkout.',
-  }, '/forum/': { title: 'Call of Duty cheat forum: setup and aimbot threads', description: 'Call of Duty cheat forum threads on loaders, ESP clutter, aimbot FOV, patch nights, and loot intel from PC players—read discussions before checkout.', }, '/faq/': { title: 'Call of Duty Cheat FAQ | Loader, Risk, and Checkout', description: 'FAQ on Call of Duty cheat modules, loader status, HWID tools, Cloud DMA, and checkout. Scan answers first, then open support or the product hub.', }, '/terms/': {
+  }, '/forum/': {
+    title: 'COD CHEAT forum | Loader, ESP & aimbot threads',
+    description:
+      'COD CHEAT forum threads on loaders, ESP clutter, aimbot FOV, patch nights, and loot intel from PC players—read before checkout on cod-cheat.net.',
+  }, '/faq/': { title: 'Call of Duty Cheat FAQ | Loader, Risk, and Checkout', description: 'FAQ on Call of Duty cheat modules, loader status, HWID tools, Cloud DMA, and checkout. Scan answers first, then open support or the product hub.', }, '/terms/': {
     title: 'Terms of Use for cod-cheat.net | Liability & Refunds',
     description:
       'Terms for browsing cod-cheat.net, using guides and forum threads, and following outbound store checkout. Refunds follow the seller policy.',

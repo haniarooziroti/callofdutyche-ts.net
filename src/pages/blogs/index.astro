@@ -13,7 +13,6 @@ import {
 } from '../../data/blogs/posts';
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../utils/schema';
 import { PRODUCT_BASE } from '../../config/site';
-import { pageTitle } from '../../config/seo';
 
 const posts = getCommercialBlogPosts();
 const breadcrumbs = [
@@ -24,7 +23,7 @@ const productHref = `${PRODUCT_BASE}modules/`;
 ---
 
 <BaseLayout
-  title={pageTitle('COD Cheat Guides & Blog Articles')}
+  title={BLOG_INDEX_TITLE}
   description={BLOG_INDEX_DESCRIPTION}
   jsonLd={[
     collectionPageSchema({
