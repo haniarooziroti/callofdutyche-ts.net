@@ -1,9 +1,9 @@
 import type { FaqItem } from '../i18n/types';
 import { t } from '../i18n';
-import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
 import { DISCORD_URL } from '../config/site';
+import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
 const siteName = t.site.name;
-const brandName = 'Call of Duty Cheats';
+const brandName = t.site.name;
 
 export interface BreadcrumbItem {
   name: string;
@@ -36,8 +36,8 @@ export function websiteSchema() {
 
 export function organizationSchema() {
   const envSameAs = getOrganizationSameAs();
-  const fallback = DISCORD_URL ? [DISCORD_URL] : [];
-  const sameAs = [...new Set([...envSameAs, ...fallback])];
+  const discordFallback = envSameAs.length === 0 && DISCORD_URL ? [DISCORD_URL] : [];
+  const sameAs = [...new Set([...envSameAs, ...discordFallback, canonicalUrl('/forum/')])];
 
   return {
     '@context': 'https://schema.org',

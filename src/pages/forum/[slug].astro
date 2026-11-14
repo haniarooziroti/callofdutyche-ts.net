@@ -27,7 +27,6 @@ const relatedPosts = [
 ---
 
 <BaseLayout
-  robots="noindex, follow"
   title={pageTitle(post.title)}
   description={cheatMetaDescription(post.excerpt)}
   jsonLd={[
@@ -69,7 +68,7 @@ const relatedPosts = [
                 <a href="#comments"><Icon name="messageCircle" size={16} /> {post.commentsCount} replies</a>
               </div>
               <div class="forum-login-prompt">
-                <span class="forum-user-dot">i</span><span>Read-only thread</span><span>Posting is not available on this mirror</span>
+                <span class="forum-user-dot">i</span><span>Sign in to reply</span><span>or open a new thread from the <a href="/forum/">forum home</a></span>
               </div>
               <section class="forum-comments" id="comments" aria-labelledby="comments-title">
                 <div class="forum-comments__heading">

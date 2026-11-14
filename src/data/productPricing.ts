@@ -66,7 +66,7 @@ const ugcPlans: ProductPlan[] = [
 ];
 
 export function getProductPlans(productSlug: string): ProductPlan[] {
-  if (productSlug === 'ugc') return ugcPlans;
+  if (productSlug === 'appeals') return ugcPlans;
   return standardPlans;
 }
 

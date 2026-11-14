@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const pricingHref = `${PRODUCT_BASE}modules/#pricing`;
+const modulesHref = `${PRODUCT_BASE}modules/`;
 const midSection = Math.floor(post.sections.length / 2);
 const related = post.relatedSlugs
   .map((slug) => getCommercialBlogPost(slug))
@@ -135,8 +135,8 @@ const introRest = introParts.slice(1).join(' ');
         Buy now
         <Icon name="arrowRight" size={16} />
       </Button>
-      <Button as="a" href={pricingHref} variant="outline">
-        View pricing
+      <Button as="a" href={modulesHref} variant="outline">
+        View modules
         <Icon name="arrowRight" size={16} />
       </Button>
     </div>

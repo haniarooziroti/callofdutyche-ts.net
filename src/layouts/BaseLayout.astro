@@ -10,6 +10,7 @@ import {
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
   absoluteAssetUrl,
+  GA_MEASUREMENT_ID,
 } from '../config/seo';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -78,7 +79,7 @@ const robotsContent =
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={`${t.site.domain} articles RSS`}
+      title={`${t.site.domain} blogs RSS`}
       href={RSS_FEED_PATH}
     />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -124,7 +125,7 @@ const robotsContent =
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <link rel="preload" href="/fonts/rajdhani-600.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin />
-    <meta name="ga4-measurement-id" content="" />
+    <meta name="ga4-measurement-id" content={GA_MEASUREMENT_ID ?? ''} />
 
     {jsonLd && <JsonLd data={jsonLd} />}
     <slot name="head" />
@@ -159,7 +160,10 @@ const robotsContent =
         document.addEventListener(
           'click',
           function (event) {
-            var link = event.target && event.target.closest ? event.target.closest('a[href*="/go/"]') : null;
+            var link =
+              event.target && event.target.closest
+                ? event.target.closest('a[href*="/go/"], a[data-plan], a[data-checkout-buy]')
+                : null;
             if (!link) return;
             var plan = link.getAttribute('data-plan') || '';
             gtag('event', 'checkout_click', {

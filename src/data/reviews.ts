@@ -28,7 +28,7 @@ const reviewBodies = [
   'Minimum price filter on loot ESP is why I bought. Combat-hide hotkey helps during evac scrambles.',
   'Player boxes plus radar reinforcement is enough for our squad comms. Bone select in portal was easy to find.',
   'Cloud DMA page explained IOMMU better than the seller FAQ. Read it twice before buying hardware.',
-  'Visible check stopped snaps through smoke. Loader auto-update after supported PC titles patch was smooth.',
+  'Visible check stopped snaps through smoke. Loader auto-update after the last Call of Duty patch was smooth.',
   'Appeal templates organized my receipts. No guaranteed unban, but the timeline export helped my store ticket.',
   'Lifetime key arrived in under two minutes. Modules match the product page list—no surprise paywalls.',
   'Night raid ESP contrast preset from articles actually works. Teammate mute saved readability.',
@@ -37,7 +37,7 @@ const reviewBodies = [
   'Forum thread on FOV led me here. Reviews looked real so I tried monthly first.',
   'Config hotkeys sync after portal login. Same-tab checkout was easier on mobile.',
   'Health bar tags help in Multiplayer. I do not stack every visual layer at once.',
-  'Monthly plan renews clean; price matched schema on the product page.',
+  'Monthly plan renews clean; checkout matched what the product page listed.',
 ];
 
 const roles = [

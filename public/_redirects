@@ -11,6 +11,10 @@
 /products/call-of-duty-cheats/call-of-duty-store/ /products/call-of-duty-cheats/modules/ 301
 /products/call-of-duty-cheats/call-of-duty-store/* /products/call-of-duty-cheats/modules/:splat 301
 /forum/cod-merchant-checkout-plans/ /forum/cod-checkout-plans/ 301
+/blogs/cod-esp-guide/ /blogs/cod-esp-settings/ 301
+/blogs/cod-esp-guide/* /blogs/cod-esp-settings/:splat 301
+/products/call-of-duty-cheats/ugc/ /products/call-of-duty-cheats/appeals/ 301
+/products/call-of-duty-cheats/ugc/* /products/call-of-duty-cheats/appeals/:splat 301
 /products/dota-2-cheats /products/call-of-duty-cheats/ 301
 /products/dota-2-cheats/ /products/call-of-duty-cheats/ 301
 /contact /support/ 301

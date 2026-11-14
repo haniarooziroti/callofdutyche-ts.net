@@ -19,6 +19,8 @@ export const LEGACY_PRODUCT_REDIRECTS = new Map([
   ['/products/call-of-duty-cheats/elite/', '/products/call-of-duty-cheats/modules/'],
   ['/products/call-of-duty-cheats/call-of-duty-store/', '/products/call-of-duty-cheats/modules/'],
   ['/products/call-of-duty-cheats/call-of-duty-store', '/products/call-of-duty-cheats/modules/'],
+  ['/products/call-of-duty-cheats/ugc/', '/products/call-of-duty-cheats/appeals/'],
+  ['/products/call-of-duty-cheats/ugc', '/products/call-of-duty-cheats/appeals/'],
 ]);
 
 export function resolveCheckoutPathRedirect(pathname) {

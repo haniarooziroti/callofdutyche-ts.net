@@ -91,7 +91,7 @@ export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | '
   if (product.slug === 'hwid-spoofer') {
     return 'Call of Duty HWID Spoofer | Fresh Windows Identifiers';
   }
-  if (product.slug === 'ugc') {
+  if (product.slug === 'appeals') {
     return 'Account Appeals for Call of Duty | Evidence Workspace';
   }
   const phrase = `${product.title} | Call of Duty`;
