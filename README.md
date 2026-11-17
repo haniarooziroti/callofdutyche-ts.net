@@ -3,7 +3,7 @@
 **Production site:** https://cod-cheats.com/
 
 **Git remote (Workers / Pages must use this repo):**  
-https://github.com/haniarooziroti/cod-che-ts.net.git
+https://github.com/haniarooziroti/cod-che-ts.com.git
 
 Default branch: `main` (alias `master` also exists for older build configs).
 
@@ -22,7 +22,7 @@ Environment variables (dashboard or Worker secrets):
 - `PUBLIC_GA_MEASUREMENT_ID` — your GA4 ID (optional)
 - `GA_MEASUREMENT_ID` — same ID for runtime HTML rewrite (optional)
 
-If the build log shows **“error occurred while fetching repository”**, reconnect Git in the Cloudflare dashboard: Worker → Settings → Builds → **Disconnect** and link again to `haniarooziroti/cod-che-ts.net`, branch `main`, and confirm the GitHub app can access this repository.
+If the build log shows **“error occurred while fetching repository”**, reconnect Git in the Cloudflare dashboard: Worker → Settings → Builds → **Disconnect** and link again to `haniarooziroti/cod-che-ts.com`, branch `main`, and confirm the GitHub app can access this repository.
 
 ## Local
 

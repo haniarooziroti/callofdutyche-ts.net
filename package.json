@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "media:sync": "node scripts/sync-cod-mw4-media.mjs",
-    "build": "node scripts/generate-brand-icons.mjs && node scripts/emit-delta-media-variants.mjs && node scripts/optimize-images.mjs && astro build && node scripts/prune-dist-images.mjs && node scripts/finalize-sitemap.mjs && node scripts/indexnow.mjs && node scripts/verify-dist-html.mjs && node scripts/verify-domain.mjs && node scripts/verify-blog-links.mjs",
+    "build": "node scripts/generate-brand-icons.mjs && node scripts/emit-delta-media-variants.mjs && node scripts/optimize-images.mjs && astro build && node scripts/prune-dist-images.mjs && node scripts/finalize-sitemap.mjs && node scripts/indexnow.mjs && node scripts/verify-dist-html.mjs && node scripts/verify-domain.mjs && node scripts/verify-blog-links.mjs && node scripts/verify-internal-links.mjs && node scripts/seo-check.mjs",
     "preview": "astro preview --host 0.0.0.0",
     "start": "node scripts/serve.mjs",
     "astro": "astro",
