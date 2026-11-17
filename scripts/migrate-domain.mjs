@@ -38,7 +38,7 @@ for (const file of files) {
   if (!exts.has(path.extname(file)) && base !== '_redirects' && base !== 'robots.txt') continue;
   let content = fs.readFileSync(file, 'utf8');
   if (!content.includes('cod-cheats.net')) continue;
-  fs.writeFileSync(file, content.split('cod-cheats.net').join('cod-cheat.net'), 'utf8');
+  fs.writeFileSync(file, content.split('cod-cheats.net').join('cod-cheats.com'), 'utf8');
   changed++;
 }
 console.log(`migrate-domain: updated ${changed} files`);

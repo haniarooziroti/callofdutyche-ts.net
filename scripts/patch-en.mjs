@@ -4,7 +4,7 @@ const p = 'src/i18n/en.ts';
 let s = fs.readFileSync(p, 'utf8');
 
 s = s
-  .replaceAll('cs2-cheats.org', 'cod-cheat.net')
+  .replaceAll('cs2-cheats.org', 'cod-cheats.com')
   .replaceAll('/products/cs2-cheats/', '/products/call-of-duty-cheats/')
   .replaceAll('cs2-store', 'call-of-duty-store')
   .replaceAll('CS2', 'Call of Duty')

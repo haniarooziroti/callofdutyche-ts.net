@@ -5,9 +5,15 @@ interface Env {
   GA_MEASUREMENT_ID?: string;
 }
 
-const PRODUCTION_HOST = 'cod-cheat.net';
+const PRODUCTION_HOST = 'cod-cheats.com';
 
-const LEGACY_ALIAS_HOSTS = new Set(['www.cod-cheat.net', 'cod-cheat.net', 'www.cod-cheat.net']);
+const LEGACY_ALIAS_HOSTS = new Set([
+  'www.cod-cheats.com',
+  'cod-cheats.com',
+  'www.cod-cheats.com',
+  'cod-cheats.net',
+  'www.cod-cheats.net',
+]);
 
 function withRobots(response: Response, hostname: string): Response {
   if (!hostname.endsWith('.workers.dev') && !hostname.endsWith('.pages.dev')) return response;

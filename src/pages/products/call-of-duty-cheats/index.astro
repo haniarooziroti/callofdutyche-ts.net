@@ -46,7 +46,7 @@ const catalogCards = getCatalogCards();
       <div class="mt-6 max-w-3xl space-y-3">
         <h1 class="text-3xl font-bold md:text-4xl">Call of Duty cheats for PC</h1>
         <p class="text-lg text-muted-foreground">
-          Compare module scope, compatibility notes, and utility add-ons. Pricing and plan length are shown at checkout.
+          Compare module scope, compatibility notes, and utility add-ons. Checkout on the linked store when you are ready to buy.
         </p>
         <p class="text-sm text-muted-foreground">
           <a href="/" class="text-primary underline-offset-4 hover:underline">Call of Duty cheats feature overview</a>
@@ -72,7 +72,7 @@ const catalogCards = getCatalogCards();
               badge={product.badge}
               variant={product.variant}
               extraBadges={product.extraBadges}
-              buyLabel="Proceed to Checkout"
+              buyLabel="Buy Now"
             />
           );
         })}
@@ -80,9 +80,8 @@ const catalogCards = getCatalogCards();
 
       <div class="mt-10">
         <Button as="a" href={PRIMARY_CHECKOUT_PATH} rel={AFFILIATE_REL} variant="primary" size="lg" class="rounded-xl">
-          Proceed to Checkout
+          Buy Now
         </Button>
-        <p class="mt-2 text-xs text-muted-foreground">Available plans and pricing are shown at checkout.</p>
       </div>
     </div>
   </section>

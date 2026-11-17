@@ -104,7 +104,7 @@ export function getForumThreadSeo(
 ): ForumThreadSeo {
   const hit = FORUM_THREAD_SEO[slug];
   if (hit) return hit;
-  const title = `${fallbackTitle} | cod-cheat.net`;
+  const title = `${fallbackTitle} | cod-cheats.com`;
   const description = fallbackExcerpt;
   return { title, description };
 }

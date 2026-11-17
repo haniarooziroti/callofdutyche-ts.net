@@ -8,7 +8,7 @@ function normalizeOrigin(url: string): string {
 }
 
 /**
- * Canonical / OG / hreflang base URL — always production (cod-cheat.net).
+ * Canonical / OG / hreflang base URL — always production (cod-cheats.com).
  * Preview hosts must not leak into canonicals or sitemap-facing meta.
  */
 export const SITE_ORIGIN = normalizeOrigin(SITE_URL);

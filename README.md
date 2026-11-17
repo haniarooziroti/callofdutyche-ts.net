@@ -1,6 +1,6 @@
-# cod-cheat.net (Astro)
+# cod-cheats.com (Astro)
 
-**Production site:** https://cod-cheat.net/
+**Production site:** https://cod-cheats.com/
 
 **Git remote (Workers / Pages must use this repo):**  
 https://github.com/haniarooziroti/cod-che-ts.net.git
@@ -18,7 +18,7 @@ Default branch: `main` (alias `master` also exists for older build configs).
 
 Environment variables (dashboard or Worker secrets):
 
-- `PUBLIC_SITE_ORIGIN=https://cod-cheat.net`
+- `PUBLIC_SITE_ORIGIN=https://cod-cheats.com`
 - `PUBLIC_GA_MEASUREMENT_ID` — your GA4 ID (optional)
 - `GA_MEASUREMENT_ID` — same ID for runtime HTML rewrite (optional)
 

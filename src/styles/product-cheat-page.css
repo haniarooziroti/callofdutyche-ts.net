@@ -261,8 +261,9 @@
 
 @media (min-width: 1024px) {
   .product-detail-hero__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 22rem);
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
   }
 
   .product-detail-hero__grid .product-checkout {

@@ -1,5 +1,5 @@
 {
-  "name": "cod-che-ts-net",
+  "name": "cod-che-ts-com",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-01",
   "build": {
