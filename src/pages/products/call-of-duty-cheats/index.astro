@@ -9,9 +9,6 @@ import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CatalogCard from '../../../components/CatalogCard.astro';
 import { productPath } from '../../../utils/path';
 import { productPages } from '../../../data/products';
-import { PRIMARY_CHECKOUT_PATH } from '../../../config/checkout';
-import { AFFILIATE_REL } from '../../../config/affiliate';
-import { Button } from '@/components/starwind/button';
 
 const seo = resolvePageSeo('/products/call-of-duty-cheats/');
 const breadcrumbs = [
@@ -78,11 +75,6 @@ const catalogCards = getCatalogCards();
         })}
       </div>
 
-      <div class="mt-10">
-        <Button as="a" href={PRIMARY_CHECKOUT_PATH} rel={AFFILIATE_REL} variant="primary" size="lg" class="rounded-xl">
-          Buy Now
-        </Button>
-      </div>
     </div>
   </section>
 </BaseLayout>

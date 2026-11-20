@@ -1,5 +1,8 @@
-# workers.dev host (one * per rule — see Cloudflare static assets headers docs)
+# Preview hosts (one * per rule — see Cloudflare static assets headers docs)
 https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://:project.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 
 /*

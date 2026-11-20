@@ -1,6 +1,6 @@
 ---
-import { DISCORD_URL } from "../config/site";
 import { t } from "../i18n";
+import { ROUTES } from "../utils/path";
 import { setupStepIcons } from "../data/sectionIcons";
 import Icon from "./icons/Icon.astro";
 import { Button } from "@/components/starwind/button";
@@ -52,12 +52,10 @@ const lastRowIndex = why.rows.length - 1;
                     <>
                       {row.descParts[0]}
                       <a
-                        href={DISCORD_URL}
-                        rel="noopener noreferrer"
+                        href={ROUTES.forum}
                         class="text-primary underline-offset-4 hover:underline"
-                        aria-label="Join our Discord server"
                       >
-                        Discord
+                        forum threads
                       </a>
                       {row.descParts[1]}
                     </>
@@ -155,12 +153,10 @@ const lastRowIndex = why.rows.length - 1;
                     <>
                       {row.descParts[0]}
                       <a
-                        href={DISCORD_URL}
-                        rel="noopener noreferrer"
+                        href={ROUTES.forum}
                         class="text-primary underline-offset-4 hover:underline"
-                        aria-label="Join our Discord server"
                       >
-                        Discord
+                        forum threads
                       </a>
                       {row.descParts[1]}
                     </>

@@ -1,6 +1,5 @@
 import type { FaqItem } from '../i18n/types';
 import { t } from '../i18n';
-import { DISCORD_URL } from '../config/site';
 import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
 const siteName = t.site.name;
 const brandName = t.site.name;
@@ -42,8 +41,7 @@ export function organizationSchema() {
       return false;
     }
   });
-  const discordFallback = envSameAs.length === 0 && DISCORD_URL ? [DISCORD_URL] : [];
-  const sameAs = [...new Set([...envSameAs, ...discordFallback])];
+  const sameAs = [...new Set([...envSameAs])];
 
   return {
     '@context': 'https://schema.org',

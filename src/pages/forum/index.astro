@@ -32,7 +32,6 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
               <h1>{t.forum?.title ?? 'COD Cheats forum: setup threads'}</h1>
               <p class="forum-hero__copy">{t.forum?.subtitle ?? 'Loader setup, aimbot tuning, ESP layouts, and patch-night talk from PC players.'}</p>
             </div>
-            <a class="forum-create" href={PRIMARY_CHECKOUT_PATH} rel={AFFILIATE_REL}><Icon name="navProducts" size={17} /> {t.ui.navTryNow}</a>
           </header>
 
         <main class="forum-main" aria-label="Community posts">
@@ -41,7 +40,6 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
             <div class="forum-sort" role="group" aria-label="Post sorting">
               <button class="is-active" type="button" data-forum-sort="popular" aria-pressed="true">Popular</button>
               <button type="button" data-forum-sort="latest" aria-pressed="false">Latest</button>
-              <button type="button" data-forum-sort="top" aria-pressed="false">Most discussed</button>
             </div>
             <label class="forum-search">
               <Icon name="search" size={16} />
@@ -97,6 +95,7 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
           <div class="forum-sidebar__share rounded-2xl border border-border bg-card/80 p-4">
             <ShareButtons shareUrl={canonicalUrl('/forum/')} shareText={seo.title} class="!mt-0 border-0 bg-transparent p-0" />
           </div>
+          <a class="forum-create forum-create--sidebar" href={PRIMARY_CHECKOUT_PATH} rel={AFFILIATE_REL}><Icon name="navProducts" size={17} /> {t.ui.navTryNow}</a>
           <section class="forum-side-card forum-about" id="community-guidelines">
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
@@ -148,7 +147,6 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
       const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
       const ordered = [...cards].sort((a, b) => {
         if (sort === 'latest') return Number(b.dataset.published) - Number(a.dataset.published);
-        if (sort === 'top') return Number(b.dataset.comments) - Number(a.dataset.comments);
         return Number(a.dataset.order) - Number(b.dataset.order);
       });
       const matching = ordered.filter((card) => {

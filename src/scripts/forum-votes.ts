@@ -1,4 +1,4 @@
-const storagePrefix = 'arkhacks-forum-vote:';
+const storagePrefix = 'cod-cheats-forum-vote:';
 
 export function initForumVotes(): void {
   document.querySelectorAll<HTMLElement>('[data-forum-card], [data-forum-vote]').forEach((post) => {

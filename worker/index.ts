@@ -5,15 +5,10 @@ interface Env {
   GA_MEASUREMENT_ID?: string;
 }
 
-const PRODUCTION_HOST = 'cod-cheats.com';
+const PRODUCTION_HOST = 'callofdutycheats.net';
 
-const LEGACY_ALIAS_HOSTS = new Set([
-  'www.cod-cheats.com',
-  'cod-cheats.com',
-  'www.cod-cheats.com',
-  'cod-cheats.net',
-  'www.cod-cheats.net',
-]);
+/** Prior clone hostnames only — never include cod-cheats.com (independent site). */
+const LEGACY_ALIAS_HOSTS = new Set(['www.callofdutycheats.net', 'cod-cheats.net', 'www.cod-cheats.net']);
 
 function withRobots(response: Response, hostname: string): Response {
   if (!hostname.endsWith('.workers.dev') && !hostname.endsWith('.pages.dev')) return response;
@@ -46,14 +41,24 @@ export default {
 
     const gaId = env.GA_MEASUREMENT_ID?.trim();
     const type = response.headers.get('content-type') ?? '';
-    if (gaId && type.includes('text/html')) {
-      response = new HTMLRewriter()
-        .on('meta[name="ga4-measurement-id"]', {
+    const isPreview = host.endsWith('.workers.dev') || host.endsWith('.pages.dev');
+    if ((gaId || isPreview) && type.includes('text/html')) {
+      let rewriter = new HTMLRewriter();
+      if (gaId) {
+        rewriter = rewriter.on('meta[name="ga4-measurement-id"]', {
           element(element) {
             element.setAttribute('content', gaId);
           },
-        })
-        .transform(response);
+        });
+      }
+      if (isPreview) {
+        rewriter = rewriter.on('head', {
+          element(element) {
+            element.prepend('<meta name="robots" content="noindex,nofollow">', { html: true });
+          },
+        });
+      }
+      response = rewriter.transform(response);
     }
 
     return withRobots(response, host);

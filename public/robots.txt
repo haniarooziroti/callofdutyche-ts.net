@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://cod-cheats.com/sitemap.xml
+Sitemap: https://callofdutycheats.net/sitemap.xml

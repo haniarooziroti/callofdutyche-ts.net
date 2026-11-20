@@ -18,6 +18,7 @@ import ProductExperienceSection from './product/ProductExperienceSection.astro';
 import ProductRelatedForumsSection from './product/ProductRelatedForumsSection.astro';
 import ShareButtons from './ShareButtons.astro';
 import { canonicalUrl } from '../config/seo';
+import { SITE_DOMAIN } from '../config/site';
 import { productHub } from '../data/products';
 
 interface Props {
@@ -39,7 +40,7 @@ const showDescToggle = descriptionBlocks.length > 2;
 
 const pagePath = `${productHub.path}${product.slug}/`;
 const shareUrl = canonicalUrl(pagePath);
-const shareText = `${product.title} — Call of Duty cheat product on cod-cheats.com`;
+const shareText = `${product.title} — Call of Duty cheat product on ${SITE_DOMAIN}`;
 ---
 
 <div class="product-detail">

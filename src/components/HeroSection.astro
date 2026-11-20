@@ -1,7 +1,6 @@
 ---
 import { t } from '../i18n';
 import { PRODUCT_BASE } from '../config/site';
-import { ROUTES } from '../utils/path';
 import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { AFFILIATE_REL } from '../config/affiliate';
 import BuyNowButton from './BuyNowButton.astro';
@@ -51,11 +50,11 @@ const heroMarqueePills = [
 
         <div class="hero-cta-row">
           <BuyNowButton
-            href={ROUTES.productsStorefront}
+            href={PRODUCT_BASE}
             label={h.ctaPrimary}
             size="lg"
             class="shrink-0"
-            aria-label="Browse Call of Duty cheat modules"
+            aria-label="Browse Call of Duty cheat products"
           />
           <BuyNowButton
             href={PRIMARY_CHECKOUT_PATH}

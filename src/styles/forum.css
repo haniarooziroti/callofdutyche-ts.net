@@ -4,6 +4,7 @@
 .forum-hero h1 span { color:var(--primary); }
 .forum-hero__copy { margin:.9rem 0 0; color:var(--muted-foreground); font-size:.95rem; }
 .forum-create,.forum-join { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; border:1px solid var(--primary); border-radius:999px; padding:.75rem 1.15rem; color:#fff; background:var(--primary); font-size:.84rem; font-weight:700; white-space:nowrap; transition:background .2s,transform .2s; }
+.forum-create--sidebar { width:100%; margin-bottom:.75rem; }
 .forum-create:hover,.forum-join:hover { background:var(--primary-accent); transform:translateY(-1px); }
 .forum-layout { display:grid; grid-template-columns:minmax(0,1fr) 17.75rem; align-items:start; gap:clamp(1.25rem,3vw,2rem); }
 .forum-layout--page { margin-top:.75rem; }

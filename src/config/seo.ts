@@ -8,7 +8,7 @@ function normalizeOrigin(url: string): string {
 }
 
 /**
- * Canonical / OG / hreflang base URL — always production (cod-cheats.com).
+ * Canonical / OG / hreflang base URL — always production (callofdutycheats.net).
  * Preview hosts must not leak into canonicals or sitemap-facing meta.
  */
 export const SITE_ORIGIN = normalizeOrigin(SITE_URL);
@@ -104,7 +104,7 @@ export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | '
     return 'Call of Duty HWID Spoofer | Fresh Windows Identifiers';
   }
   if (product.slug === 'appeals') {
-    return 'Account Appeals for Call of Duty | Evidence Workspace';
+    return 'Ban Paperwork Workspace for Call of Duty | Evidence Kit';
   }
   const phrase = `${product.title} | Call of Duty`;
   return phrase.length >= 50 && phrase.length <= 60 ? phrase : phrase.slice(0, 60);

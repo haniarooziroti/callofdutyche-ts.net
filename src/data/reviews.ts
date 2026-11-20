@@ -19,7 +19,7 @@ export const REVIEW_SUMMARY = {
 
 const reviewBodies = [
   'ESP boxes stayed clean on urban warfare lanes. I keep aimbot on a key and only flick it for close Operations pushes.',
-  'Loot filters paid for themselves on extraction nights. Support answered in Discord within an hour about loader exclusions.',
+  'Loot filters paid for themselves on extraction nights. Support ticket on loader exclusions came back the same night.',
   'Smoothing feels natural at 5° FOV after I followed the blog guide. Patch day downtime matched the site banner.',
   'Capture-friendly mode worked in OBS tests. Skeleton glow stays off by default which saved my stream layout.',
   'Chams preset for stairwells is sharp but I lowered brightness. Checkout and key email were instant.',
@@ -29,7 +29,7 @@ const reviewBodies = [
   'Player boxes plus radar reinforcement is enough for our squad comms. Bone select in portal was easy to find.',
   'Cloud DMA page explained IOMMU better than the seller FAQ. Read it twice before buying hardware.',
   'Visible check stopped snaps through smoke. Loader auto-update after the last Call of Duty patch was smooth.',
-  'Appeal templates organized my receipts. No guaranteed unban, but the timeline export helped my store ticket.',
+  'Ban paperwork templates organized my receipts. No guaranteed unban, but the timeline export helped my store ticket.',
   'Lifetime key arrived in under two minutes. Modules match the product page list—no surprise paywalls.',
   'Night raid ESP contrast preset from the ESP guide actually works. Teammate mute saved readability.',
   'HWID utility in stock when I checked—badge here matched the store.',
