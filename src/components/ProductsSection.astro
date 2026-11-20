@@ -11,7 +11,7 @@ const catalogProducts = getCatalogCards();
 <section id="products" class="border-y border-border bg-muted/20 py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {
         catalogProducts.map((product) => {
           const cardTitle = product.cardTitle ?? product.title;

@@ -29,10 +29,12 @@ const catalogCards = getCatalogCards();
     }),
     breadcrumbSchema(breadcrumbs),
     itemListSchema(
-      productPages.map((product) => ({
-        name: product.title,
-        url: productPath(product.slug),
-      })),
+      productPages
+        .filter((product) => product.slug !== 'appeals')
+        .map((product) => ({
+          name: product.title,
+          url: productPath(product.slug),
+        })),
     ),
   ]}
 >
@@ -43,7 +45,7 @@ const catalogCards = getCatalogCards();
       <div class="mt-6 max-w-3xl space-y-3">
         <h1 class="text-3xl font-bold md:text-4xl">Call of Duty cheats for PC</h1>
         <p class="text-lg text-muted-foreground">
-          Compare module scope, compatibility notes, and utility add-ons. Checkout on the linked store when you are ready to buy.
+          Compare module scope, compatibility notes, and utility add-ons, then open the page that matches what you need.
         </p>
         <p class="text-sm text-muted-foreground">
           <a href="/" class="text-primary underline-offset-4 hover:underline">Call of Duty cheats feature overview</a>
@@ -54,7 +56,7 @@ const catalogCards = getCatalogCards();
         </p>
       </div>
 
-      <div class="mt-10 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      <div class="mt-10 grid items-stretch gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {catalogCards.map((product) => {
           const cardTitle = product.cardTitle ?? product.title;
           return (

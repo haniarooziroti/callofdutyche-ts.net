@@ -9,10 +9,10 @@ import { resolveDistRoot } from './dist-root.mjs';
 import { SITE_ORIGIN, resolveSiteOrigin } from './site-origin.mjs';
 
 resolveSiteOrigin();
-const TITLE_MIN = 50;
-const TITLE_MAX = 60;
-const DESC_MIN = 120;
-const DESC_MAX = 155;
+const TITLE_MIN = 35;
+const TITLE_MAX = 70;
+const DESC_MIN = 90;
+const DESC_MAX = 170;
 
 function walkHtml(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
@@ -162,14 +162,8 @@ for (const file of htmlFiles.sort()) {
     exit = 1;
   }
 
-  const en = hreflangs.filter((h) => h.hreflang === 'en');
-  const xd = hreflangs.filter((h) => h.hreflang === 'x-default');
-  if (en.length !== 1 || en[0].href !== expectedCanonical) {
-    issues.push(`${relFile}: need exactly one hreflang="en" → ${expectedCanonical}`);
-    exit = 1;
-  }
-  if (xd.length !== 1 || xd[0].href !== expectedCanonical) {
-    issues.push(`${relFile}: need exactly one hreflang="x-default" → ${expectedCanonical}`);
+  if (hreflangs.length > 0) {
+    issues.push(`${relFile}: remove hreflang until a second language exists`);
     exit = 1;
   }
 

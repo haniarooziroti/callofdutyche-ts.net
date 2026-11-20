@@ -27,7 +27,7 @@ const reviewBodies = [
   'Had FOV too wide at first—support did not blame me; I documented settings and reran a private match.',
   'Minimum price filter on loot ESP is why I bought. Combat-hide hotkey helps during evac scrambles.',
   'Player boxes plus radar reinforcement is enough for our squad comms. Bone select in portal was easy to find.',
-  'Cloud DMA page explained IOMMU better than the seller FAQ. Read it twice before buying hardware.',
+  'Cloud DMA page explained IOMMU clearly. Read it twice before buying hardware.',
   'Visible check stopped snaps through smoke. Loader auto-update after the last Call of Duty patch was smooth.',
   'Ban paperwork templates organized my receipts. No guaranteed unban, but the timeline export helped my store ticket.',
   'Lifetime key arrived in under two minutes. Modules match the product page list—no surprise paywalls.',

@@ -41,7 +41,7 @@ export function getCatalogCards(): CatalogCardData[] {
     : [];
 
   const utilities: CatalogCardData[] = productPages
-    .filter((p) => p.kind === 'utility')
+    .filter((p) => p.kind === 'utility' && p.slug !== 'appeals')
     .map((product) => ({
       label: product.category ?? 'Utility',
       title: product.title,

@@ -17,7 +17,7 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
 ---
 
 <BaseLayout title={seo.title} description={seo.description} jsonLd={[
-  collectionPageSchema({ name: 'COD CHEAT forum', description: seo.description, url: '/forum/' }),
+  collectionPageSchema({ name: 'Call of Duty Cheats forum', description: seo.description, url: '/forum/' }),
   breadcrumbSchema(breadcrumbs),
 ]}>
   <section class="forum-page py-8 md:py-12">
@@ -29,7 +29,7 @@ const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '
           <header class="forum-hero forum-hero--in-grid">
             <div>
               <p class="section-header__eyebrow">{t.forum?.eyebrow ?? 'Community'}</p>
-              <h1>{t.forum?.title ?? 'COD Cheats forum: setup threads'}</h1>
+              <h1>{t.forum?.title ?? 'Call of Duty cheat forum'}</h1>
               <p class="forum-hero__copy">{t.forum?.subtitle ?? 'Loader setup, aimbot tuning, ESP layouts, and patch-night talk from PC players.'}</p>
             </div>
           </header>

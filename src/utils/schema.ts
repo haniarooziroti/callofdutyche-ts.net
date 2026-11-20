@@ -262,7 +262,7 @@ export function discussionForumPostingSchema(input: {
     commentCount: input.comments,
     isPartOf: {
       '@type': 'CollectionPage',
-      name: 'COD CHEAT forum',
+      name: 'Call of Duty Cheats forum',
       url: canonicalUrl('/forum/'),
     },
   };

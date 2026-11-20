@@ -24,7 +24,7 @@ const shareUrl = canonicalUrl('/faq/');
     webPageSchema({
       name: 'FAQ | Call of Duty cheats, loader & checkout',
       description:
-        'Answers about Call of Duty cheat modules, ESP, aimbot, HWID tools, forums, and checkout through the linked store.',
+        'Answers about Call of Duty cheat modules, ESP, aimbot, HWID tools, and Cloud DMA.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),

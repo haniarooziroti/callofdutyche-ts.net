@@ -95,16 +95,16 @@ export function pageTitle(keyword: string, suffixSite = t.site.domain): string {
 /** Product detail `<title>` — authored strings per slug. */
 export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | 'slug'>): string {
   if (product.slug === 'modules') {
-    return 'Call of Duty Cheat Modules for ESP, Aimbot and Loot';
+    return 'Call of Duty Cheat Modules | Call of Duty Cheats';
   }
   if (product.slug === 'cloud-dma') {
-    return 'Call of Duty Cloud DMA Hardware | Cabling and Notes';
+    return 'Call of Duty Cloud DMA | Call of Duty Cheats';
   }
   if (product.slug === 'hwid-spoofer') {
-    return 'Call of Duty HWID Spoofer | Fresh Windows Identifiers';
+    return 'Call of Duty HWID Spoofer | Call of Duty Cheats';
   }
   if (product.slug === 'appeals') {
-    return 'Ban Paperwork Workspace for Call of Duty | Evidence Kit';
+    return 'Call of Duty Ban Paperwork | Call of Duty Cheats';
   }
   const phrase = `${product.title} | Call of Duty`;
   return phrase.length >= 50 && phrase.length <= 60 ? phrase : phrase.slice(0, 60);
