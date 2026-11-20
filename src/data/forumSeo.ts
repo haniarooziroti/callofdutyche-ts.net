@@ -7,67 +7,67 @@ export interface ForumThreadSeo {
 }
 
 export const FORUM_THREAD_SEO: Record<string, ForumThreadSeo> = {
-  'aimbot-fov-smoothness-ranked-ops': {
+  'cod-forum-aimbot': {
     title: 'Aimbot FOV for Multiplayer | Call of Duty Cheats',
     description:
       'Multiplayer thread on aimbot FOV caps and ADS smoothing. The settings write-up lives in the aimbot FOV guide.',
     guideHref: '/blogs/cod-aimbot-fov/',
   },
-  'loader-first-boot-defender-exclusions': {
+  'cod-loader-boot': {
     title: 'Win11 loader first boot & Defender paths | Call of Duty Cheats',
     description:
       'First-boot loader thread: which Windows Defender exclusions worked on Win11 for Call of Duty cheat downloads—order of operations before ranked play.',
   },
-  'esp-clutter-night-raids': {
+  'cod-esp-night': {
     title: 'Night Raid ESP Clutter | Call of Duty Cheats',
     description:
       'Thread on teammate outlines and loot tags during night raids. Distance caps and box thickness are in the ESP settings guide.',
     guideHref: '/blogs/cod-esp-settings/',
   },
-  'wallhack-skeleton-vs-box-only': {
+  'cod-wallhack-box': {
     title: 'Skeleton vs Box Wallhack | Call of Duty Cheats',
     description:
       'Breach thread on skeleton layouts versus box-only reads. The comparison is in the wallhack and ESP guide.',
-    guideHref: '/blogs/cod-wallhack-guide/',
+    guideHref: '/blogs/cod-wallhack/',
   },
-  'patch-night-loader-verify-spin': {
+  'cod-patch-loader': {
     title: 'Loader Verify Spin After a Patch | Call of Duty Cheats',
     description:
       'Thread for a loader that sits on verify after a game update. The wait-and-retest steps are in the patch day guide.',
-    guideHref: '/blogs/cod-patch-day-status/',
+    guideHref: '/blogs/cod-patch-day/',
   },
-  'loot-intel-extraction-timing': {
+  'cod-loot-timing': {
     title: 'Loot intel ESP with player ESP — worth it? | Call of Duty Cheats',
     description:
       'Solo queue loot intel ESP debate: container filters and HUD noise on long extractions—read player tips before adding loot modules at checkout.',
   },
-  'stream-mode-esp-leak-obs': {
+  'cod-stream-leak': {
     title: 'Stream mode ESP leaking in OBS recordings | Call of Duty Cheats',
     description:
       'OBS capture thread when stream-safe ESP still appears in MP4 exports—scene checks and game capture fixes before streaming with Call of Duty overlays.',
   },
-  'cloud-dma-worth-single-pc': {
+  'cod-dma-one-pc': {
     title: 'Cloud DMA without a second PC — realistic? | Call of Duty Cheats',
     description:
       'Cloud DMA thread for Call of Duty: second PC, cabling, and what a single gaming PC cannot do on its own.',
   },
-  'hwid-spoof-before-new-account': {
+  'cod-hwid-account': {
     title: 'HWID Order Before a New Account | Call of Duty Cheats',
     description:
       'Thread on restore points and a cold boot before a new Call of Duty login. The utility page covers the spoof steps.',
     guideHref: '/products/call-of-duty-cheats/hwid-spoofer/',
   },
-  'trigger-delay-pistol-profile': {
+  'cod-trigger-pistol': {
     title: 'Trigger delay pistol profile vs rifles | Call of Duty Cheats',
     description:
       'Separate pistol trigger delay profiles for CQB—forum settings that look natural in kill cam before you enable combat modules on Call of Duty PC.',
   },
-  'lite-vs-full-module-stack': {
+  'cod-lite-vs-full': {
     title: 'Lite ESP stack vs full combat modules | Call of Duty Cheats',
     description:
       'Weekend squad thread on intel-only ESP versus full aim and trigger stacks—match modules to role before checkout on the Call of Duty cheat catalog.',
   },
-  'chams-brightness-night-map': {
+  'cod-chams-night': {
     title: 'Chams brightness on dark maps — eye strain | Call of Duty Cheats',
     description:
       'Chams opacity and team color tips for moonlit Call of Duty maps—balance visibility with eye comfort before you save configs or buy visual modules.',
@@ -77,28 +77,28 @@ export const FORUM_THREAD_SEO: Record<string, ForumThreadSeo> = {
     description:
       'Informational RICOCHET and anti-cheat expectations for Call of Duty on PC—not bypass advice. Read risks, loader pauses, and FAQ links before play.',
   },
-  'cod-mouse-sensitivity-baseline': {
+  'cod-mouse-sens': {
     title: 'Mouse sensitivity baseline before aimbot | Call of Duty Cheats',
     description:
       'Lock cm/360 and ADS splits before tuning aimbot FOV on Call of Duty PC—forum baseline habits so overlay curves match your real muscle memory.',
   },
-  'cod-ranked-play-esp-density': {
+  'cod-ranked-esp': {
     title: 'Ranked Play ESP density settings on PC | Call of Duty Cheats',
     description:
       'Ranked Search and Destroy ESP density tips: distance caps, teammate mute, and thinner boxes—forum presets before you queue with Call of Duty modules.',
   },
-  'cod-config-profile-swap': {
+  'cod-config-swap': {
     title: 'Config profiles between playlists on PC | Call of Duty Cheats',
     description:
       'Swap loader configs between Battle Royale and Multiplayer on Call of Duty PC—forum steps for wider ESP in BR and tighter combat HUD in MP.',
   },
-  'cod-checkout-plans': {
+  'cod-checkout': {
     title: 'Where Call of Duty Plans Are Listed | Call of Duty Cheats',
     description:
       'Thread on monthly and lifetime plans. The step list for paying and saving the receipt is in the checkout guide.',
     guideHref: '/blogs/buy-cod-cheats/',
   },
-  'cod-windows-11-loader-notes': {
+  'cod-win11-loader': {
     title: 'Windows 11 first-boot loader checklist | Call of Duty Cheats',
     description:
       'Windows 11 Defender exclusions, reboot order, and the first loader launch for Call of Duty on PC.',

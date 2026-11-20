@@ -11,6 +11,8 @@ const hrefRe = /href="(\/[^"'#?]+)"/g;
 function distPathExists(href) {
   if (!href || href.startsWith('/go/') || href.startsWith('/_astro/')) return true;
   if (href === '/rss.xml' || href === '/rss.xml/') return true;
+  if (href === '/sitemap.xml' || href === '/sitemap.xml/') return true;
+  if (href === '/sitemap-index.xml' || href === '/sitemap-index.xml/') return true;
   const bare = href.replace(/\/$/, '') || '/';
   if (bare === '/') return fs.existsSync(path.join(dist, 'index.html'));
   const rel = bare.slice(1);

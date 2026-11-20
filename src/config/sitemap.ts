@@ -18,12 +18,12 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     path.startsWith('/products/other-cheats/') ||
     path === '/blog/' ||
     path.startsWith('/blog/') ||
-    path === '/forum/aimbot-fov-smoothness-ranked-ops/' ||
-    path === '/forum/esp-clutter-night-raids/' ||
-    path === '/forum/wallhack-skeleton-vs-box-only/' ||
-    path === '/forum/hwid-spoof-before-new-account/' ||
-    path === '/forum/patch-night-loader-verify-spin/' ||
-    path === '/forum/cod-checkout-plans/'
+    path === '/forum/cod-forum-aimbot/' ||
+    path === '/forum/cod-esp-night/' ||
+    path === '/forum/cod-wallhack-box/' ||
+    path === '/forum/cod-hwid-account/' ||
+    path === '/forum/cod-patch-loader/' ||
+    path === '/forum/cod-checkout/'
   ) {
     return undefined;
   }
